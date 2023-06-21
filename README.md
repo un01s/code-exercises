@@ -4,29 +4,29 @@ Go over basic data structures and algorithms. At the same time pick up the missi
 
 The order of learning is to follow basic data structures and their related common algorithms, and to implement the solutions of LeetCode questions in C++ and other languages.
 
-## 00-hello
+## 01-hello
 
-## 01-array
+## 02-array
 
-## 02-linked list
+## 03-linked list
 
-## 03-hash table
+## 04-hash table
 
-## 04-string
+## 05-string
 
-## 05-double-pointer
+## 06-double-pointer
 
-## 06-stack and queue
+## 07-stack and queue
 
-## 07-binary tree
+## 08-binary tree
 
-## 08-back tracking
+## 09-back tracking
 
-## 09-greedy algorithm
+## 10-greedy algorithm
 
-## 10-dynamic programming 
+## 11-dynamic programming 
 
-## 11-graph
+## 12-graph
 
 
 ## references
