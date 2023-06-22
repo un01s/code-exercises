@@ -1,4 +1,5 @@
 /*
+ * 27 https://leetcode.com/problems/remove-element/
  * Given one array, nums, and one value, val:
  * remove all elements whose value equals to val,
  * and return the new length of the array after removal.
