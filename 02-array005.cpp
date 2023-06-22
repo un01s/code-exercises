@@ -33,6 +33,8 @@
 
 using namespace std;
 
+// pass by reference here
+// it is different from pass by pointer
 void print(vector<vector<int> > m, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < n; j++) { // typo i++
