@@ -1,8 +1,8 @@
 # Data Structure and Algorithm in C++
 
-Go over basic data structures and algorithms. At the same time pick up the missing parts of C++, C, Go and JavaScript. Is it possible to move to GPU, especially embedded GPU or embedded display?
+Go over basic data structures and algorithms. At the same time pick up the missing parts of C++, and other languages. Possible move to GPU, and embedded display?
 
-The order of learning is to follow basic data structures and their related common algorithms, and to implement the solutions of LeetCode questions in C++ and other languages.
+The order of learning is to follow basic data structures and common algorithms based on them, and to implement the solutions of LeetCode questions in C++ and other languages.
 
 ## 01-hello
 
