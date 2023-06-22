@@ -1,5 +1,5 @@
 /*
- * https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0704.二分查找.md
+ * 704 https://leetcode.com/problems/binary-search/
  *
  * binary search
  * - the array is ordered
