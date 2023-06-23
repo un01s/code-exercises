@@ -22,15 +22,13 @@ public:
 
         int startx = 0, starty = 0;
         int loop = min(row, col)/2; // n=3, loop=1
-        int midx = col/2;
-        int midy = row/2;
         int count = 0;  // assign a value to each grid of the matrix
         int offset = 1; // after each loop, the length decrements
         int i, j;
         while(loop--) {
             i = startx;
             j = starty;
-            // each loop contains 4 lines
+            // each loop contains 4 sides
             // always keep [closes, open)
             // 1: from left to right, [left, right)
             for (j = starty; j < col-offset; j++) {
@@ -44,13 +42,10 @@ public:
             for (; j > starty; j--) {
                 res[count++] = matrix[i][j];
             }
-            // 2x2 case the last element is missed here
-            // 2x3 case is good
             // 4: from bottom to top
             for (; i > startx; i--) {
                 res[count++] = matrix[i][j];
             }
-
             // when the next loop starts, the starting point increments
             // e.g. first loop [0, 0], second [1, 1], etc.
             startx++;
@@ -70,11 +65,11 @@ public:
             }
         } else if (count <= row*col) {
             // the remaining could be one element, one row, or one column
-            cout << "startx = " << startx << endl;
-            cout << "starty = " << starty << endl;
-            cout << "offset = " << offset << endl;
-            cout << "row = " << row << endl;
-            cout << "col = " << col << endl;
+            //cout << "startx = " << startx << endl;
+            //cout << "starty = " << starty << endl;
+            //cout << "offset = " << offset << endl;
+            //cout << "row = " << row << endl;
+            //cout << "col = " << col << endl;
             if ((col-offset)==1 && (row-offset)==1) {
                 // one element only
                 res[count] = matrix[startx][starty];
