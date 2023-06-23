@@ -28,3 +28,35 @@ public:
     }
 };
 
+// recursive: reverse from head to tail
+class Solution2 {
+public:
+    ListNode* reverseList(ListNode* head) {
+        return reverse(nullptr, head);
+    }
+
+    ListNode* reverse(ListNode* pre, ListNode* cur) {
+        if (cur == nullptr) return pre;
+        ListNode* tmp = cur->next;
+        cur->next = pre;
+        // the next dose two steps in one
+        // pre = cur
+        // cur = tmp 
+        return reverse(cur, tmp);
+    }
+};
+
+// recursive: reverse from tail to head
+class Solution3 {
+public:
+    ListNode* reverseList(ListNode* head) {
+        // corner cases
+        if (head == nullptr) return nullptr;
+        if (head->next == nullptr) return head;
+        //
+        ListNode* last = reverseList(head->next);
+        head->next->next = head;
+        head->next = nullptr;
+        return last;
+    }
+};
