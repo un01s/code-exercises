@@ -42,6 +42,14 @@ Before this problem, all the solutions are from others. This code is all by myse
 
 * However, for mxn matrix, there are more corner cases. There are cases of small matrix which does not have a complete loop such as [[1]], 1xn or mx1 matrix. There are cases of how to deal with remaining grids after some complete loops. the remaining may be one element at the center of the matrix, one row or one column.
 
+## algorithms used with array
+
+* binary search: O(logN)
+
+* double pointers (fast and slow pointers)
+
+* sliding window (adjusting the start position of sub-string)
+
 ## reference
 
 * [loop invariant](https://en.wikipedia.org/wiki/Loop_invariant)
