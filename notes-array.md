@@ -1,6 +1,14 @@
 # notes on array
 
-For the loops, always remember to maintain correct range of either [start, end) or (start, end]. This is extremely important in the loop implementation. Find it and keep it constant.
+For the loops, always remember to maintain correct range of either [start, end) or (start, end]. This is extremely important in the loop. Find it and keep it constant. A ```loop invariant``` is some predicate (condition) that holds for every iteration of the loop. 
+
+```c++
+int s = 0;
+for (int i = 0; i < a.size(); i++) {
+    // s is the sum of the first i elements
+    s = s + a[i];
+}
+```
 
 ## array vs vector in C++
 
@@ -19,4 +27,8 @@ Before this problem, all the solutions are from others. This code is all by myse
 * For nxn matrix, the loop is always a complete one with four loops. One possible corner case is that when the edge is an odd number, there is the center of the matrix has to be taken care of separately. 
 
 * However, for mxn matrix, there are more corner cases. There are cases of small matrix which does not have a complete loop such as [[1]], 1xn or mx1 matrix. There are cases of how to deal with remaining grids after some complete loops. the remaining may be one element at the center of the matrix, one row or one column.
+
+## reference
+
+* [loop invariant](https://en.wikipedia.org/wiki/Loop_invariant)
 
