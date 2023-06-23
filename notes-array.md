@@ -14,6 +14,20 @@ for (int i = 0; i < a.size(); i++) {
 
 All the code in C++ uses vector instead of array in LeetCode. Though vector is based on array, they are different.
 
+### array
+
+* built-in language construct
+* a continuous, indexable sequence of the same-type elements
+* fixed size (no resize), compile-time constant unless allocated dynamically
+* the storage space is scoped
+* if dynamically allocated, deallocate them explicitly, atomic allocation
+
+### vector
+
+* a template class
+* c++ only contruct
+* implemented as a dynamic array, changeable
+
 ## notes on 02-array006.cpp [54 spiral matrix](https://leetcode.com/problems/spiral-matrix/)
 
 Before this problem, all the solutions are from others. This code is all by myself.
