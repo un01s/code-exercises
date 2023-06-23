@@ -100,6 +100,14 @@ private:
 int main() {
     MyLinkedList l;
 
+    // another option is the following as shown in LeetCode
+    // MyLinkedList* pl = new MyLinkedList();
+    // then all the operations have to use the pointer
+    // pl->addAtHead(1);
+    // pl->addAtTail(3);
+    // pl->get(1);
+    // pl->deleteAtIndex(1);
+
     l.addAtHead(1);
     l.show();
 
