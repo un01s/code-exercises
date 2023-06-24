@@ -159,40 +159,36 @@ public:
     // next2 = second->next
     //
     void swapNodes(int k) {
-        // locate the first node 
+        // locate the node before the first 
         ListNode* pre1 = _dummyHead;
         int index1 = k-1;
         while(index1--) {
             pre1 = pre1->next;
         }
-        //cout << "pre1:" << pre1->val;
 
-        // locate the tail and then the second node
+        // locate the tail and then the node before the second
         ListNode* tail = _dummyHead;
         int length = 0;
         while(tail->next != nullptr) {
             tail = tail->next;
             length += 1;
         }
-        //cout << " length:" << length;
         int index2 = length-k;
-        //cout << " index2:" << index2;
         ListNode* pre2 = _dummyHead;
         while(index2--) {
             pre2 = pre2->next;
         }
-        //cout << " pre2:" << pre2->val << endl;
         //
         if (pre1->next != pre2->next) {
             ListNode* first = pre1->next;
             ListNode* second = pre2->next;
-            ListNode* tmp1 = first->next;
-            ListNode* tmp2 = second->next;
+            ListNode* next1 = first->next;
+            ListNode* next2 = second->next;
 
             pre1->next = pre2->next;
-            second->next = tmp1;
-            tmp1->next = first;
-            first->next = tmp2;
+            second->next = next1;
+            next1->next = first;
+            first->next = next2;
         }
     }
 
