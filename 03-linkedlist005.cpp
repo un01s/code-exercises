@@ -187,13 +187,13 @@ public:
     void removeNthFromEnd(int n) {
         ListNode* fast = _dummyHead;
         ListNode* slow = _dummyHead;
-        while(n--) {
+        while(n-- && fast != nullptr) {
             fast = fast->next;
         }
         // fast starting from _dummyHead
         // after the above loop, fast is at the (n)th from start
-        //cout << "fast:" << fast->val;
-        while(fast->next != nullptr) {
+        fast = fast->next;
+        while(fast != nullptr) {
             fast = fast->next;
             slow = slow->next;
         }
