@@ -122,7 +122,7 @@ public:
         }
         cout << endl;
     }
-
+    // 24 swap pairs
     void swapPairs() {
         ListNode* cur = _dummyHead;
         // actual head of the linked list
@@ -141,6 +141,55 @@ public:
             cur = cur->next->next; // move two nodes forward for next loop
         }
     }
+    // 1721 swapping nodes in a linked list
+    // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
+    // d -> 1 -> 2 -> 3 -> 4 -> 5, k = 2
+    // d -> 1 -> 4 -> 3 -> 2 -> 5
+    // node 2 and node 4 is the target
+    // we need node1 and node3 for swapping
+    // pre1 = 1
+    // first = 1->next
+    // next1 = first->next
+    // pre2 = 3
+    // second = 3->next
+    // next2 = second->next
+    void swapNodes(int k) {
+        // locate the first node 
+        ListNode* before1 = _dummyHead;
+        int index1 = k-1;
+        while(index1--) {
+            before1 = before1->next;
+        }
+        cout << "before1:" << before1->val;
+
+        // locate the tail and then the second node
+        ListNode* tail = _dummyHead;
+        int length = 0;
+        while(tail->next != nullptr) {
+            tail = tail->next;
+            length += 1;
+        }
+        cout << " length:" << length;
+        int index2 = length-k;
+        cout << " index2:" << index2;
+        ListNode* before2 = _dummyHead;
+        while(index2--) {
+            before2 = before2->next;
+        }
+        cout << " before2:" << before2->val << endl;
+        //
+        if (before1->next != before2->next) {
+            ListNode* first = before1->next;
+            ListNode* second = before2->next;
+            ListNode* tmp1 = first->next;
+            ListNode* tmp2 = second->next;
+
+            before1->next = before2->next;
+            second->next = tmp1;
+            tmp1->next = first;
+            first->next = tmp2;
+        }
+    }
 
 private:
     int _size;
@@ -156,9 +205,35 @@ int main() {
     pl->addAtTail(3);
     pl->addAtTail(4);
     pl->show();
-   
     pl->swapPairs();
     pl->show();
+
+    // test2
+    MyLinkedList* l2 = new MyLinkedList();
+    l2->addAtHead(1);
+    l2->addAtTail(2);
+    l2->addAtTail(3);
+    l2->addAtTail(4);
+    l2->addAtTail(5);
+    l2->show();
+    l2->swapNodes(2);
+    l2->show();
+
+    // test3
+    MyLinkedList* l3 = new MyLinkedList();
+    l3->addAtHead(7);
+    l3->addAtTail(9);
+    l3->addAtTail(6);
+    l3->addAtTail(6);
+    l3->addAtTail(7);
+    l3->addAtTail(8);
+    l3->addAtTail(3);
+    l3->addAtTail(0);
+    l3->addAtTail(9);
+    l3->addAtTail(5);
+    l3->show(); // 7 9 6 6 7 8 3 0 9 5
+    l3->swapNodes(5);
+    l3->show(); // 7 9 6 6 8 7 3 0 9 5
  
     return 0;
 }
