@@ -145,22 +145,27 @@ public:
     // https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
     // d -> 1 -> 2 -> 3 -> 4 -> 5, k = 2
     // d -> 1 -> 4 -> 3 -> 2 -> 5
-    // node 2 and node 4 is the target
-    // we need node1 and node3 for swapping
-    // pre1 = 1
-    // first = 1->next
+    // 
+    // We need swap node2 with node4. 
+    // Remember what we have is a singly linked list.
+    // So we find the nodes just before node2 and node4.
+    //
+    // pre1 = node1
+    // first = node1->next (i.e. node2)
     // next1 = first->next
-    // pre2 = 3
-    // second = 3->next
+    //
+    // pre2 = node3
+    // second = node3->next (i.e. node4)
     // next2 = second->next
+    //
     void swapNodes(int k) {
         // locate the first node 
-        ListNode* before1 = _dummyHead;
+        ListNode* pre1 = _dummyHead;
         int index1 = k-1;
         while(index1--) {
-            before1 = before1->next;
+            pre1 = pre1->next;
         }
-        cout << "before1:" << before1->val;
+        //cout << "pre1:" << pre1->val;
 
         // locate the tail and then the second node
         ListNode* tail = _dummyHead;
@@ -169,22 +174,22 @@ public:
             tail = tail->next;
             length += 1;
         }
-        cout << " length:" << length;
+        //cout << " length:" << length;
         int index2 = length-k;
-        cout << " index2:" << index2;
-        ListNode* before2 = _dummyHead;
+        //cout << " index2:" << index2;
+        ListNode* pre2 = _dummyHead;
         while(index2--) {
-            before2 = before2->next;
+            pre2 = pre2->next;
         }
-        cout << " before2:" << before2->val << endl;
+        //cout << " pre2:" << pre2->val << endl;
         //
-        if (before1->next != before2->next) {
-            ListNode* first = before1->next;
-            ListNode* second = before2->next;
+        if (pre1->next != pre2->next) {
+            ListNode* first = pre1->next;
+            ListNode* second = pre2->next;
             ListNode* tmp1 = first->next;
             ListNode* tmp2 = second->next;
 
-            before1->next = before2->next;
+            pre1->next = pre2->next;
             second->next = tmp1;
             tmp1->next = first;
             first->next = tmp2;
