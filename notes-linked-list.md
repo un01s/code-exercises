@@ -8,7 +8,7 @@ A linked list is a linear collection of data elements and each element points to
 struct ListNode {
     int val; // node data
     ListNode *next; // pointer to the next node
-    ListNode(int x): val(x), next(NULL) {} // constructor
+    ListNode(int x): val(x), next(nullptr) {} // constructor
 };
 
 ListNode* head = new ListNode(1);
@@ -25,4 +25,17 @@ array has the continuous space in memory, while a linked list is not continuous 
 * delete a node
 
 * add a node
+
+## notes
+
+In [Leetcode 19: remove the Nth node from end of list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/):
+
+* use the dummy head so that both head-node and non-head-node could be treated in the same way
+* use double-pointer approach: 
+  ** 1. move the fast pointer n+1 nodes/steps
+  ** 2. then move both fast and slow pointers until the fast is pointing at the tail. the slow pointer is pointing at the node just before the Nth from the end
+* this approah is clever to use the double pinters
+
+In [leetcode 160: intersection of two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/), the solution has an interesting idea: get the length of both lists and move one pointer so that both are tail-aligned. Then move both pointers at the same time to find if there is an intersection. That is, if the pointer has the same value.
+
 
