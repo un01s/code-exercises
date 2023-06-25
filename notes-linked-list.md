@@ -38,4 +38,19 @@ In [Leetcode 19: remove the Nth node from end of list](https://leetcode.com/prob
 
 In [leetcode 160: intersection of two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/), the solution has an interesting idea: get the length of both lists and move one pointer so that both are tail-aligned. Then move both pointers at the same time to find if there is an intersection. That is, if the pointer has the same value.
 
+In [leetcode 142: linked list cycle II](https://leetcode.com/problems/linked-list-cycle-ii/), there are some math required.
+
+The approach is to use double pointers. Both pointers start from the head node, the fast pointer moves two nodes while the slow pointer moves one node at a time. If both pointers met, then there is a circle or ring. 
+
+How to find out the entry node? 
+
+* x: from the head node to the entry node
+* y: from the entry node to the meeting node
+* z: from the meeting node to the entry node
+
+So the slow pointer moves ```x + y``` steps/nodes when both meet. The fast pointer has ```x + y + n*(y + z)``` where ```n >= 1```.
+
+The equation is ```(x + y)*2 = x + y + n*(y + z)```. To find the entry node, x is the answer. Follow the equation, ```x + y = n* (y + z)```, then ```x = n*(y + z) - y```. If n = 1, then ```x = z```.
+
+Now if we have two pointers, if one starts from the head node, and the other starts from the met node, when these two pointer met, it is where the entry node is.
 
