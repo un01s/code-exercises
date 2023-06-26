@@ -28,6 +28,17 @@ array has the continuous space in memory, while a linked list is not continuous 
 
 ## notes
 
+It is troublesome to get a specific node while dealing with a singly linked list. It is common to use ```while(cur->next != nullptr)``` to traverse the whole list. Then use ```while(index--)``` to reach a specific node at the index. 
+
+The first problem, [203 remove linked list elements](https://leetcode.com/problems/remove-linked-list-elements/), is easy. Just get the struct of list node reight. Then traverse the list to match the value of a node with the expected value. 
+The second problem is [707 design linked list](https://leetcode.com/problems/design-linked-list/). DummyHead is to make the programmer's life easier. Basic operations on the linked list are there. Then how to test the code if we are not rely on the leetcode. How to cover the code with complete cases is another problems.
+
+### [leetcode 206: reverse linked list](https://leetcode.com/problems/reverse-linked-list/)
+
+### [leetcode 24: swap nodes in pairs](https://leetcode.com/problems/swap-nodes-in-pairs/)
+
+After this, another problem [leetcode 1721: swapping nodes in a linked list](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/). It is always handy if you get the pointer to the node just before the node to operate in a singly linked list.
+
 ### [Leetcode 19: remove the Nth node from end of list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/):
 
 * use the dummy head so that both head-node and non-head-node could be treated in the same way
