@@ -28,17 +28,20 @@ array has the continuous space in memory, while a linked list is not continuous 
 
 ## notes
 
-In [Leetcode 19: remove the Nth node from end of list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/):
+### [Leetcode 19: remove the Nth node from end of list](https://leetcode.com/problems/remove-nth-node-from-end-of-list/):
 
 * use the dummy head so that both head-node and non-head-node could be treated in the same way
+
 * use double-pointer approach: 
   *  move the fast pointer n+1 nodes/steps
   * then move both fast and slow pointers until the fast is pointing at the tail. the slow pointer is pointing at the node just before the Nth from the end
 * this approah is clever to use the double pinters
 
-In [leetcode 160: intersection of two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/), the solution has an interesting idea: get the length of both lists and move one pointer so that both are tail-aligned. Then move both pointers at the same time to find if there is an intersection. That is, if the pointer has the same value.
+### [leetcode 160: intersection of two linked lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
-In [leetcode 142: linked list cycle II](https://leetcode.com/problems/linked-list-cycle-ii/), there are some math required.
+the solution has an interesting idea: get the length of both lists and move one pointer so that both are tail-aligned. Then move both pointers at the same time to find if there is an intersection. That is, if the pointer has the same value.
+
+### [leetcode 142: linked list cycle II](https://leetcode.com/problems/linked-list-cycle-ii/), there are some math required.
 
 The approach is to use double pointers. Both pointers start from the head node, the fast pointer moves two nodes while the slow pointer moves one node at a time. If both pointers met, then there is a circle or ring. 
 
