@@ -1,9 +1,5 @@
 # [hash table](https://en.wikipedia.org/wiki/Hash_table)
 
-Array is the simplest hash table. The memory is continuous. Use the index to access the value. The index and its value are mapped to each other. 
-
-Now let's have keys and values paired. The keys can be integers or strings. The values are not limited to integers as well. How are we going to have these keys and values stored and retrieved?
-
 One purpose of hash table is to know if an element is in a set. A hash function maps an element to an index of a hash table. ```index = hashFunction(name)``` and ```hashFunction = hashCode(name)%tableSize```. 
 
 ### array, set and map in C++ for hash table
