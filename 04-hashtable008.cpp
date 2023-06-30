@@ -22,6 +22,7 @@
 
 using namespace std;
 
+// hash-table
 class Solution {
 public:
     vector<vector<int> > threeSum(vector<int>& nums) {
@@ -63,6 +64,42 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<vector<int> > threeSum(vector<int>& nums) {
+        vector<vector<int> > result;
+        sort(nums.begin(), nums.end());
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] > 0) {
+                return result; // no solution because the first is already greater than 0 in a sorted array
+            }
+            if (i > 0 && nums[i] == nums[i-1]) {
+                continue;
+            }
+            int left = i+1;
+            int right = nums.size()-1;
+            while ( right > left) {
+                if (nums[i]+nums[left]+nums[right] > 0) {
+                    right--;
+                } else if (nums[i]+nums[left]+nums[right] < 0) {
+                    left++; // typo -- causes a segmentation fault
+                } else {
+                    int a[] = {nums[i], nums[left], nums[right]};
+                    vector<int> v(a, a+sizeof(a)/sizeof(int));
+                    result.push_back(v);
+                    cout << nums[i] << "," << nums[left] << "," << nums[right] << endl;
+                    while(right>left && nums[right]==nums[right-1]) right--;
+                    while(right>left && nums[left]==nums[left+1]) left++;
+                    // since one solution is found
+                    right--;
+                    left--;
+                }
+            }
+        }
+        return result;
+    }
+};
+
 int main() {
     Solution s;
 
@@ -72,6 +109,11 @@ int main() {
 //  $./a.out 
 //  {-1,1,0}
 //  {-1,2,-1}
+    
+    Solution2 s2;
+    int m[] = {-1, 0, 1, 2, -1, -4};
+    vector<int> nums2(m, m+sizeof(m)/sizeof(int));
+    s2.threeSum(nums2);
 
     return 0;
 }
