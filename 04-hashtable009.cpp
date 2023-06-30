@@ -23,40 +23,41 @@ using namespace std;
 class Solution {
 public:
     vector<vector<int> > fourSum(vector<int>& nums, int target) {
-        <vector<vector<int> > result;
+        vector<vector<int> > result; // have a typo, one extra < at the leftest
         sort(nums.begin(), nums.end());
-        for (int i = 0; i < nums.size(); i++) {
+        for (int k = 0; k < nums.size(); k++) {
             // trim
-            if (nums[i]>target && nums[i]>=0) {
+            if (nums[k]>target && nums[k]>=0) {
                 break;
             }
-            // trim nums[i]
-            if (i>0 && nums[i]==nums[i-1]) {
+            // trim nums[k]
+            if (k>0 && nums[k]==nums[k-1]) {
                 continue;
             }
-            for (int j = i+1; j < nums.size(); j++) {
+            for (int j = k+1; j < nums.size(); j++) {
                 // second-level trim
-                if (nums[i]+nums[j]>target && nums[i]+nums[j]>=0) {
+                if (nums[k]+nums[j]>target && nums[k]+nums[j]>=0) {
                     break;
                 } 
-                if (j>i+1 && nums[j]==nums[j-1]) {
+                if (k>j+1 && nums[j]==nums[j-1]) {
                     continue;
                 }
                 int left = j+1;
                 int right = nums.size()-1;
                 while(right > left) {
-                    if ((long)nums[i]+nums[j]+nums[left]+nums[right] > target) {
+                    if ((long)nums[k]+nums[j]+nums[left]+nums[right] > target) {
                         right--;
-                    } else if ((long)nums[i]+nums[j]+nums[left]+nums[right] < target) {
+                    } else if ((long)nums[k]+nums[j]+nums[left]+nums[right] < target) {
                         left++;
                     } else {
-                        int n[] = {nums[i], nums[j], left, right};
+                        //int n[] = {nums[k], nums[j], left, right};
+                        int n[] = {nums[k], nums[j], nums[left], nums[right]};
                         vector<int> v(n, n+sizeof(n)/sizeof(int));
                         result.push_back(v);
-                        cout << nums[i] << "";
-                        cout << nums[j] << "";
-                        cout << left << "";
-                        cout << right << endl;
+                        cout << nums[k] << ",";
+                        cout << nums[j] << ",";
+                        cout << nums[left] << ",";
+                        cout << nums[right] << endl;
                         while(right>left && nums[right]==nums[right-1]) right--;
                         while(right>left && nums[left]==nums[left+1]) left++;
                         //
