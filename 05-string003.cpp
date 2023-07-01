@@ -58,9 +58,14 @@ public:
             if (s[y] != ' ') {
                 s[x] = s[y];
             } else {
-                s[x--] = '0';
-                s[x--] = '2';
-                s[x] = '%';
+                //s[x--] = '0';
+                //s[x--] = '2';
+                //s[x] = '%';
+                // or
+                s[x] = '0';
+                s[x-1] = '2';
+                s[x-2] = '%';
+                x -= 2; // in the loop there is another decrement
             } 
             cout << s[y] << endl;
         }
