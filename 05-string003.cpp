@@ -72,11 +72,36 @@ public:
         return s;
     }
 };
+/*
+string replaceTest(string s) {
+    int count = 0;
+    int sOldSize = s.size();
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == ' ') {
+            count++;
+        }
+    }
+    s.resize(s.size() + count * 3);
+    int sNewSize = s.size();
+    for (int i = sNewSize - 1, j = sOldSize - 1; j < i; i--, j--) {
+        if (s[j] != ' ') {
+            s[i] = s[j];
+        } else {
+            s[i] = '0';
+            s[i - 1] = '2';
+            s[i - 2] = '%';
+            i -= 2;
+        }
+    }
+    return s;
+}
+*/
 
 int main() {
     string str1 = "We are happy"; // c++ string 
     string str2 = "We are sad."; // c++ string 
-    
+    string str3 = "We are confused";
+
     Solution s;
     cout << str1 << endl;
     cout << "after: ";
@@ -85,6 +110,9 @@ int main() {
     cout << str2 << endl;
     cout << "after: ";
     cout << s.replaceSp(str2) << endl;
-
+/*
+    cout << str3 << endl;
+    cout << replaceTest(str3) << endl;
+*/
     return 0;
 }
