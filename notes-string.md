@@ -31,7 +31,7 @@ char* replaceSpace(char* s){
 }
 ```
 
-## python code
+### python code
 
 ```python
 class Solution:
@@ -46,4 +46,9 @@ class Solution:
 ```
 
 Python code just append whatever to a new list. No double-pointer.
+
+## KMP = [Knuth-Morris-Pratt algorithm](https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm)
+
+KMP is a linear-time algorithm for string matching. While searching for occurrences of a word within a string, the key point is when a mismatch happens, the matched part has sufficient info to determine where the next match could begin, bypassing re-examination of previously matched characters.
+
 
