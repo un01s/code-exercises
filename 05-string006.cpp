@@ -68,19 +68,24 @@ public:
         // initialize
         int j = 0; // j pointing at the tail of prefix
                    // j is also the length of largest common pre and suf
-        next[0] = j;
+        next[0] = j; 
         // process, i pointing at the tail of suffix
         for (int i = 1; i < s.size(); i++) {
+            //cout << "j=" << j << " i=" << i;
+            //cout << " next[j]=" << next[j] << endl;
             // prefix and suffux not match
             // recursive backward, while instead of if
             while(j > 0 && s[i] != s[j]) {
                 j = next[j-1]; // one-step back, j has to be greater than 0
+                //cout << "j=" << j << " next[j-1]=" << next[j-1] << endl;
             }
             // match
             if (s[i] == s[j]) {
                 j++;
+                //cout << "j=" << j << endl;
             }
             next[i] = j;
+            //cout << "next[i]=" << next[i] << endl;
         }
     }
     // look for w in s
