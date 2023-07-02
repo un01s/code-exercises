@@ -36,6 +36,9 @@ public:
             next[i] = j; // the length of prefix
         }
     }
+    // strStr1() uses getNextMinus1()
+    // all the values in the next table minus 1
+    // i.e. all the initial position is -1
     int strStr1(string s, string w) {
         if(w.size() == 0) {
             return 0; // empty string of w to match
@@ -76,6 +79,9 @@ public:
         }
     }
     // look for w in s
+    // strStrs() uses getNext()
+    // all the values in the next table 
+    // i.e. all the initial position is 0
     int strStr(string s, string w) {
         if(w.size() == 0) {
             return 0; // empty string of w to match
