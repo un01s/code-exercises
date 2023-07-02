@@ -26,12 +26,13 @@ public:
         // for-loop, index i starts from 1 instead of 0
         int j = -1;
         next[0] = j;
+        // i starts from 1 instead of 0
         for (int i = 1; i < s.size(); i++) {
             while(j >= 0 && s[i] != s[j+1]) {// prefix <> suffix
                 j = next[j]; // backward, next[j] is before j+1
             }
             if (s[i] == s[j+1]) { // prefix == suffix
-                j++; // move j forward together with i (i is in the loop)
+                j++; // move j forward, together with i (i is in the loop)
             }
             next[i] = j; // the length of prefix
         }
