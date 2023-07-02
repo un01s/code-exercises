@@ -74,3 +74,7 @@ So the next table from the longest common prefix and suffix of the word ```aabaa
 | ------ | ---------- |
 | aabaaf | 0, 1, 0, 1, 2, 0 |
 
+So the next table has the position info that is the backtracing steps when the mismatch happens.
+
+Another implementation is use the next table, all the values are minus 1. This is just different implementation. Check the code, [05-string006.cpp](https://github.com/un01s/code-exercises/blob/main/05-string006.cpp).
+
