@@ -63,6 +63,18 @@ public:
         }
         return -1;
     }
+    bool repeatedSubstring1(string s) {
+        if (s.size() == 0) {
+            return false;
+        }
+        int next[s.size()];
+        getNextMinus1(next, s);
+        int len = s.size();
+        if (next[len - 1] != -1 && len % (len - (next[len - 1] + 1)) == 0) {
+            return true;
+        }
+        return false;
+    }
     // next table w/o all values minus 1
     void getNext(int* next, string& s) {
         // initialize
@@ -115,6 +127,22 @@ public:
         }
         return -1;
     }
+    bool repeatedSubstring(string s) {
+        if (s.size() == 0) {
+            return false;
+        }
+        int next[s.size()];
+        getNext(next, s);
+        for(int i = 0; i < s.size(); i++) {
+            cout << next[i] << ",";
+        } 
+        cout << endl;
+        int len = s.size();
+        if (next[len - 1] != 0 && len % (len - (next[len - 1] )) == 0) {
+            return true;
+        }
+        return false;
+    }
 };
 
 int main() {
@@ -145,6 +173,19 @@ int main() {
     cout << ans.strStr1(s, w) << endl; 		// 3
     cout << ans.strStr1("hello", "ll") << endl;	// 2
     cout << ans.strStr1("aaaaa", "ba") << endl; // -1
+
+    // repeated substring
+    if (true == ans.repeatedSubstring1("ababab")) {
+        cout << "ababab has repeated substring" << endl;
+    } else {
+        cout << "ababab has no repeated substring" << endl;
+    }
+
+    if (true == ans.repeatedSubstring("abcabcabc")) {
+        cout << "abcabcabc has repeated substring" << endl;
+    } else {
+        cout << "abcabcabc has no repeated substring" << endl;
+    }
 
     return 0;
 }
