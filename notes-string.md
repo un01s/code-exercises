@@ -62,9 +62,9 @@ For a string ```aabaa```, its prefix table and suffix table are as follows.
 | a | x | x | x |
 | aa | a | a | a |
 | aab | a, aa | ab, b | x |
-| aaba | a, aa, aab | aba, ab, b | a |
+| aaba | a, aa, aab | aba, ba, a | a |
 | aabaa | a, aa, aab, aaba | abaa, baa, aa, a | aa |
-| aabaaf | aabaa, aaba, aab, aa, a | abaaf, baaf, aaf, af, f | - |
+| aabaaf | aabaa, aaba, aab, aa, a | abaaf, baaf, aaf, af, f | x |
 
 Then the longest common prefix and suffix for ```aabaa``` is ```aa``` and its length is ```2```. The key words are ```common``` and ```longest```.
 
