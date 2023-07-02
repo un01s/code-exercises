@@ -65,12 +65,16 @@ public:
     }
     // next table w/o all values minus 1
     void getNext(int* next, string& s) {
-        int j = 0;
+        // initialize
+        int j = 0; // j pointing at the tail of prefix
+                   // j is also the length of largest common pre and suf
         next[0] = j;
+        // process, i pointing at the tail of suffix
         for (int i = 1; i < s.size(); i++) {
-            // not match
+            // prefix and suffux not match
+            // recursive backward, while instead of if
             while(j > 0 && s[i] != s[j]) {
-                j = next[j-1]; // back, j has to be greater than 0
+                j = next[j-1]; // one-step back, j has to be greater than 0
             }
             // match
             if (s[i] == s[j]) {
