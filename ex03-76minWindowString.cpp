@@ -21,7 +21,19 @@
  * not important
  * 
  * set, map(k, v), hash-table
- * 
+ *
+ * solution:
+ *
+ * use double-pointers: left and right
+ * move left at the first char of s that is one of t
+ * move right at the last char of s that is one t
+ * then find the rest of t inside (left, right)
+ * if the number of t char is two, then this is a double-pointer problem.
+ * if there are more, the double-pointer becomes more.
+ *
+ * instead we should have a map which has every char of t as its key, 
+ * its location (or index in s) as its value.
+ *  
  */
 
 #include <iostream>
@@ -32,7 +44,14 @@ using namespace std;
 
 class Solution {
 public:
-    int inString(string s, char c) {
+    int mapping(string& s, string& t) {
+        for(int i = 0; i < s.size(); i++) {
+            for(int j = 0; j < t.size(); j++) {
+                if (s[i] == t[j]) {
+                    
+                }
+            }
+        }
         for(int i = 0; i < s.size(); i++) {
             if (c == s[i]) {
                 return i;
@@ -65,6 +84,19 @@ public:
 int main() {
     string s = "ADOBECODEBANC";
     string t = "ABC";
+
+    unordered_set <string> animals;
+    animals.insert("dog");
+    animals.insert("cat");
+    animals.insert("rat");
+    animals.insert("parrot");
+    animals.insert("robin");
+    animals.insert("bee");
+
+    for(string s: animals) {
+        cout << s << ",";
+    }
+    cout << endl;
 
     Solution ans;
     if ("BANC" == ans.minWindow(s, t)) {
