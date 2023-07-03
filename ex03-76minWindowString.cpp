@@ -57,6 +57,7 @@ public:
         int start = 0;
         int len = INT_MAX;
         while (right < s.size()) {
+            // increase the window to find the solution
             char c = s[right];
             // increase right to enlarge the window,
             // until the chars inside the window has all chars of t
@@ -73,6 +74,8 @@ public:
             // do not have all chars of t.
             //           
             while(valid == need.size()) {
+                // after find the solution,
+                // optimize the solution, minimum length here 
                 // update the window
                 if ((right-left) < len) {
                     start = left;
