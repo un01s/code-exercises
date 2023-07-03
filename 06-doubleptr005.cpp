@@ -8,6 +8,10 @@
  * same as 03-linkedlist003.cpp
  * as review to check if I could do it again
  *
+ * double-pointer
+ * current and previous
+ * tmp to keep current->next
+ *
  */
 
 #include <iostream>
