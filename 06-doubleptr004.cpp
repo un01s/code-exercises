@@ -13,6 +13,11 @@
  * 
  * O(1)
  *
+ * after the submission at leetcode
+ * it suggests the following
+ * 509 fibonacci number (easy)
+ * 186 reverse words in a string II (hard)
+ *
  */
 
 #include <iostream>
