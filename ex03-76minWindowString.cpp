@@ -38,43 +38,66 @@
 
 #include <iostream>
 #include <string>
-#include <unordered_set>
+#include <unordered_map>
 
 using namespace std;
 
 class Solution {
 public:
-    int mapping(string& s, string& t) {
-        for(int i = 0; i < s.size(); i++) {
-            for(int j = 0; j < t.size(); j++) {
-                if (s[i] == t[j]) {
-                    
-                }
-            }
-        }
-        for(int i = 0; i < s.size(); i++) {
-            if (c == s[i]) {
-                return i;
-            }
-        }
-        return -1;
-    }
     string minWindow(string s, string t) {
-        int sSize = s.size();
-        int tSize = t.size();
-        if (tSize <= sSize) {
-            int left = 0;
-            int right = sSize - 1;
-            // try sliding window (double-pointer)
-            while(left < right) {
-                int leftPos = inString(t, s[left]);
-                int rightPos = inString(t, s[right]);
-                if (-1 == leftPos) {
-                    left++;
-                } else {
-                    
+        unordered_map<char, int> need, window;
+        for (int i = 0; i < t.size(); i++) {
+            need[t[i]]++;
+        }
+         
+        // try sliding window (double-pointer)
+        int left = 0, right = 0; // window = [left, right)
+        int valid = 0;
+        // record minSubstring info
+        int start = 0;
+        int len = INT_MAX;
+        while (right < s.size()) {
+            char c = s[right];
+            // increase right to enlarge the window,
+            // until the chars inside the window has all chars of t
+            //
+            right++;
+            if (need.count(c) > 0) {
+                window[c]++;
+                if (window[c] == need[c]) {
+                    valid++;
                 }
-                
+            }
+            // then stop increasing right, start to shrink the window
+            // by increase left until all the chars inside the window
+            // do not have all chars of t.
+            //           
+            while(valid == need.size()) {
+                // update the window
+                if ((right-left) < len) {
+                    start = left;
+                    len = right - left;
+                }
+                char d = s[left]; // move out of the window
+                left++;
+                // update for data inside the window 
+                if (need.count(d)) {
+                    if (window[d] == need[d]) {
+                        valid--;
+                    }
+                    window[d]--;
+                } 
+            }
+        }
+        return len==INT_MAX ? "" : s.substr(start, len); 
+    }
+
+    // brute force
+    string minWindowBF(string s, string t) {
+        for (int i = 0; i < s.size(); i++) {
+            for (int j = i+1; j < s.size(); j++) {
+                // if s[i:j] has all chars of t
+                // update
             }
         }
         return "";
@@ -84,19 +107,6 @@ public:
 int main() {
     string s = "ADOBECODEBANC";
     string t = "ABC";
-
-    unordered_set <string> animals;
-    animals.insert("dog");
-    animals.insert("cat");
-    animals.insert("rat");
-    animals.insert("parrot");
-    animals.insert("robin");
-    animals.insert("bee");
-
-    for(string s: animals) {
-        cout << s << ",";
-    }
-    cout << endl;
 
     Solution ans;
     if ("BANC" == ans.minWindow(s, t)) {
