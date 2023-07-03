@@ -32,11 +32,31 @@ using namespace std;
 
 class Solution {
 public:
+    int inString(string s, char c) {
+        for(int i = 0; i < s.size(); i++) {
+            if (c == s[i]) {
+                return i;
+            }
+        }
+        return -1;
+    }
     string minWindow(string s, string t) {
         int sSize = s.size();
         int tSize = t.size();
-        if (tSize > sSize) {
-            return "";
+        if (tSize <= sSize) {
+            int left = 0;
+            int right = sSize - 1;
+            // try sliding window (double-pointer)
+            while(left < right) {
+                int leftPos = inString(t, s[left]);
+                int rightPos = inString(t, s[right]);
+                if (-1 == leftPos) {
+                    left++;
+                } else {
+                    
+                }
+                
+            }
         }
         return "";
     }

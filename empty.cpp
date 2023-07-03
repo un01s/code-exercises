@@ -1,24 +1,24 @@
 /**
- * 
+ * Leetcode 
  *
  *
- * 
+ * 2023-07-03
+ *
  */
 
 #include <iostream>
+#include <vector>
 #include <string>
 
 using namespace std;
 
 class Solution {
 public:
-    string emptyFun(string s, int k) {
-        return s;
-    }
+    
 };
 
 int main() {
-
+    
     return 0;
 }
 
