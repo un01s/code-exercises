@@ -10,6 +10,10 @@
  *
  * 2023-07-02
  * 
+ * another way to use for-loop can be found at 05-string001.cpp.
+ * 
+ * double-pointer are often used on array, strings and linked-list.
+ * 
  */
 
 #include <iostream>
