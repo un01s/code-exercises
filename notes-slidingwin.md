@@ -58,8 +58,15 @@ All four problems are all using sliding window to solve. The first is difficult.
 
 There are still some problems at Leetcode. Examples to apply the sliding-window approach such as 1004 and 713.
 
-### 713 is still a partial solution
+### 713
 
-Add the third case.
+The approach of sliding windows are still applicable. The difficult part of the problem is as follows:
+
+* with the sliding-window approach, how to count the new subarray in the sliding window? Remember that our window is [left, right). The count is NOT all the permutation but the new subarray created by sliding right.
+
+* the special case of k <= 1. in this case, all positive numbers in the array won't return any thing.
+
+* when to count is important
+
 
 
