@@ -68,5 +68,28 @@ The approach of sliding windows are still applicable. The difficult part of the 
 
 * when to count is important
 
+### 1004
+
+Get this right for the first time. After recognizing the sliding-window is applicable, then the key questions to ask are as follows:
+
+* when to increase the window? what to update for the element within the window?
+* when to shrink the window? how about the elements in the window?
+* when to record or update the result?
+
+The only point missed in the problem is the spacial case if ```k == nums.size()```.
+
+## [other related sliding window problems](https://leetcode.com/discuss/general-discussion/1122776/summary-of-sliding-window-patterns-for-subarray-substring)
+
+3, 340, 76, 1004, 904, 424, 930, 992, 1248, 1358
+
+the idea of sliding window is simple. Keep two pointers, left and right to form a window. Use either [left, right) or [left, right], but use one consistently. Otherwise you will confuse yourself.
+
+* keep increase the right pointer
+* if the element at the right pointer makes the window not valid, move the left pointer to shrink the window until it becomes valid again. So we need some conditions to check if the window is valid or not.
+
+### length of substring or subarray, min or max
+
+* [longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+
 
 
