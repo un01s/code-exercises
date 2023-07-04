@@ -49,5 +49,13 @@ void slidingWin(string s) {
 
 ## [76 min window substring](https://leetcode.com/problems/minimum-window-substring/)
 
+* ex03-*.cpp
+* ex04-*.cpp
+* ex05-*.cpp
+* ex06-*.cpp
+
+All four problems are all using sliding window to solve. The first is difficult. The last one is easier.
+
+There are still some problems at Leetcode. Examples to apply the sliding-window approach such as 1004 and 713.
 
 
