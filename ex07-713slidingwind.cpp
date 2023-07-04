@@ -26,7 +26,7 @@ public:
         int result = 0;
         int count = 0;
         for (int i = 0; i < nums.size(); i++) {
-            if (nums[i] > k) {
+            if (nums[i] >= k) {
                 count++;
             }
         }
@@ -71,6 +71,10 @@ int main() {
     int b[] = {1, 2, 3};
     int k2 = 0;
     vector<int> w(b, b + sizeof(b)/sizeof(int));
+
+    int c[] = {10,9,10,4,3,8,3,3,6,2,10,10,9,3};
+    int k3 = 19;
+    // expected answer = 18 instead of 29
 
     Solution s;
 

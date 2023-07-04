@@ -58,4 +58,8 @@ All four problems are all using sliding window to solve. The first is difficult.
 
 There are still some problems at Leetcode. Examples to apply the sliding-window approach such as 1004 and 713.
 
+### 713 is still a partial solution
+
+Add the third case.
+
 
