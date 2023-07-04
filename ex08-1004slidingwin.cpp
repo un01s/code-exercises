@@ -109,6 +109,16 @@ int main() {
         cout << "test3 failed\n";
     }
 
+    // test 4
+    int d[] = {1,0,0,0,1,1,0,0,1,1,0,0,0,0,0,0,1,1,1,1,0,1,0,1,1,1,1,1,1,0,1,0,1,0,0,1,1,0,1,1};
+    vector<int> x(d, d + sizeof(d)/sizeof(int));
+    // test 4
+    if (25 == s.longestOnes(x, 8)) {
+        cout << "test4 OK\n";
+    } else {
+        cout << "test4 failed\n";
+    }
+
     return 0;
 }
 
