@@ -20,12 +20,14 @@
  *
  * TODO leetcode 581, 496, 503, 84, 122, 862
  * TODO study deque
+ * TODO 76, 155, 159
  *
  */
 
 #include <iostream>
 #include <vector>
 #include <deque>
+#include <list>
 
 using namespace std;
 
@@ -33,7 +35,7 @@ class Solution {
 private:
     class MyQueue {
     public:
-        deque<int> que; // monotonic queue
+        deque<int> que; // monotonic queue, max at the front
         // the elements from the front to the end is 
         // strictly either increasing or decreasing
         void pop(int value) {
@@ -50,8 +52,19 @@ private:
         int front() {
             return que.front();
         }
+        void show() {
+            if (!que.empty()) {
+                cout << "Que: ";
+                for(int n : que) {
+                    cout << n << " ";
+                }
+                cout << endl;
+            }
+        }
     };
 public:
+
+    // use deque to construct a monotonic queue
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
         show(nums);
 
@@ -60,10 +73,12 @@ public:
         for(int i = 0; i < k; i++) { // the first k element into queue
             que.push(nums[i]);
         }
+        que.show();
         result.push_back(que.front()); // record the max of the first K
         for(int i = k; i < nums.size(); i++) {
             que.pop(nums[i-k]); // remove from the left from the sliding-win
             que.push(nums[i]); // add from the right
+            que.show();
             result.push_back(que.front()); // record
         }
         show(result);
