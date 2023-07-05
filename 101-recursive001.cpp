@@ -4,6 +4,9 @@
  *
  * 2023-07-05
  *
+ * recursive and stack, two solutions
+ * stack solution seems have some issues.
+ *
  */
 
 #include <iostream>
@@ -15,6 +18,7 @@ using namespace std;
 class Solution {
 public:
     // recursive
+    // what if k is not single-dgigit?!
     string decodePartial(string& s, int& i) {
         string ans;
         while( i < s.size() && s[i] != ']') {
@@ -23,14 +27,19 @@ public:
             } else {
                 int n = 0;
                 while(i < s.size() && isdigit(s[i])) {
-                    n = n * 10 + s[i++] - '0';
+                    //n = n * 10 + s[i++] - '0';
+                    //n = stoi(s[i]);
+                    n = s[i] - '0';
+                    i++;
                 }
                 i++; // for '['
                 string t = decodePartial(s, i);
                 i++; // for ']'
 
-                while(n-- > 0) {
+                //while(n-- > 0) {
+                while(n > 0) {
                     ans += t;
+                    n--;
                 }
             } 
         }
