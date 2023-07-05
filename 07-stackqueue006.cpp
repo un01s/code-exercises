@@ -48,11 +48,7 @@ public:
             right++;
             count++;
 
-            cout << left << "-" << right << " m:" << m << " a:" << a << endl;
             if (count >= k) {
-                //if (k == 2) {
-                //    m = max(a, nums[right-2]);
-                //}
                 res[rIndex++] = m;
                 if (k == 2) {
                     m = min(m, a);
@@ -61,10 +57,19 @@ public:
 
             while(count > k) {
                 int b = nums[left];
-                //cout << "m=" << m << " b=" << b << endl;
-                //m = min(m, b);
                 count--;
                 left++;
+
+                if (b == m) {
+                    // this is hard
+                    // for example
+                    // 3 1 2 0 (k=3)
+                    // 3 out and 0 in
+                    // correct m should be 2
+                    // but how to get it if k is big?
+                    // 3 1 2 1 0 (k=4)
+                    // how to get max(1, 2, 1) here?                  
+                }
             }
         }
         show(res);
@@ -87,8 +92,8 @@ int main() {
     int k2 = 3;
     vector<int> v(b, b + sizeof(b)/sizeof(int));
 
-    int c[] = {1,-1};
-    int k3 = 1;
+    int c[] = {7, 2, 4}; //{1,-1};
+    int k3 = 2; // 1;
     vector<int> w(c, c + sizeof(c)/sizeof(int));
 
     int d[] = {3, 7, 2};
