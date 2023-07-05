@@ -18,16 +18,60 @@
  * the local max moves into its neighbor.
  * how to find the condition to avoid this sticky local max?
  *
+ * TODO leetcode 581, 496, 503, 84, 122, 862
+ * TODO study deque
+ *
  */
 
 #include <iostream>
 #include <vector>
+#include <deque>
 
 using namespace std;
 
 class Solution {
+private:
+    class MyQueue {
+    public:
+        deque<int> que; // monotonic queue
+        // the elements from the front to the end is 
+        // strictly either increasing or decreasing
+        void pop(int value) {
+            if (!que.empty() && value == que.front()) {
+                que.pop_front();
+            }
+        }
+        void push(int value) {
+            while(!que.empty() && value > que.back()) {
+                que.pop_back();
+            }
+            que.push_back(value); // decreasing from big to small
+        }
+        int front() {
+            return que.front();
+        }
+    };
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
+        show(nums);
+
+        MyQueue que;
+        vector<int> result;
+        for(int i = 0; i < k; i++) { // the first k element into queue
+            que.push(nums[i]);
+        }
+        result.push_back(que.front()); // record the max of the first K
+        for(int i = k; i < nums.size(); i++) {
+            que.pop(nums[i-k]); // remove from the left from the sliding-win
+            que.push(nums[i]); // add from the right
+            result.push_back(que.front()); // record
+        }
+        show(result);
+        return result;
+    }
+    // this sliding-window approach requires a lot of house keeping to
+    // get it right
+    vector<int> maxSlidingWindowSW(vector<int>& nums, int k) {
         show(nums);
 
         if (k == 1) return nums;
