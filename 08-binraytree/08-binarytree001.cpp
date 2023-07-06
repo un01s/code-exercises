@@ -27,6 +27,7 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
+// recursive
 class Solution {
 public:
     void traversal(TreeNode* cur, vector<int>& vec) {
@@ -41,6 +42,34 @@ public:
         return result;
     } 
 };
+
+// iterative with stack
+class Solution2 {
+public:
+    vector<int> preOrderTraversal(TreeNode* root) {
+        vector<int> result;
+
+        if (root == nullptr) {
+            return result;
+        }
+
+        stack<TreeNode*> st;
+        st.push(root);
+        while(!st.empty()) {
+            TreeNode* top = st.top();
+            st.pop();
+            result.push_back(top->val);
+            if (top->right) {
+                st.push(top->right);
+            }
+            if (top->left) {
+                st.push(top->left);
+            }
+        }
+        return result;
+    }
+};
+
 
 int main() {
     
