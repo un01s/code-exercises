@@ -4,7 +4,10 @@
  *
  * 
  * 2023-07-05
- *
+ * the bit problem with sliding-window approach is the following:
+ * the monotonic queue is very clean to think about because the max 
+ * is always at the front of the queue.
+ * 
  * max number can be sticky.
  * m, a, b
  * 1, 3, 1, 2, 0, 5 (k=3)
