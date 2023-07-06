@@ -26,4 +26,14 @@ Stack can be implemented using vector. Queue can be implemented with list.
 
 ## [232 use stack to implement queue](https://leetcode.com/problems/implement-queue-using-stacks/)
 
+## Leetcode 239 and 347
+
+* 239
+
+Try this with the sliding-window approach, but can't get it right completely. The need to have to track all the values in the window is complicated. When the monotonic queue is used, the solution is quite elegant.
+
+* 347
+
+this uses the max-heap (complete binary tree). Need to spend more time on this and to understand the details of all implementations and theory too.
+
 
