@@ -55,7 +55,16 @@ public:
             result[i] = pri_que.top().first;
             pri_que.pop();
         }
+        show(result);
+
         return result;
+    }
+    void show(vector<int>& v) {
+        cout << "vector: ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << v[i] << ",";
+        }
+        cout << endl;
     }    
 };
 
