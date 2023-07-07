@@ -49,5 +49,6 @@ use queue iteratively for level order traversal.
     1. store the current size of queue ```tempSize```, this will be the size of the current level of the tree.
     2. now traverse this level for ```tempSize>=0```: pop the current element and apply the needed operation for the same and if left or right child exist then pass them to the queue.
 
+Check out [this binary problem list](https://leetcode.com/discuss/study-guide/1212004/Binary-Trees-study-guide).
 
 
