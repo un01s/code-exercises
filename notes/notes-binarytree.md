@@ -31,6 +31,14 @@ struct TreeNode {
 };
 ```
 
+## pre-order, in-order, and post-order traversal
+
+| pre-order | in-order | post-order |
+| --------- | -------- | ---------- |
+| mid ->left ->right | left ->mid ->right | left ->right ->mid |
+
+So the order is based on the mid node (or root node).
+
 ## problems of binary tree
 
 ### traversal
