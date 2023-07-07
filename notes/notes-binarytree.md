@@ -39,6 +39,10 @@ struct TreeNode {
 
 So the order is based on the mid node (or root node).
 
+![binary-tree](https://github.com/un01s/code-exercises/tree/main/media/binary-tree.png)
+
+
+
 ## problems of binary tree
 
 ### traversal
