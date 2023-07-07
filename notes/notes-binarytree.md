@@ -36,12 +36,11 @@ struct TreeNode {
 | pre-order | in-order | post-order |
 | --------- | -------- | ---------- |
 | mid ->left ->right | left ->mid ->right | left ->right ->mid |
+| a, b, d, e, c, f, g| d, b, e, a, f, c, g| d, e, b, f, g, c, a|
 
 So the order is based on the mid node (or root node).
 
-![binary-tree](https://github.com/un01s/code-exercises/tree/main/media/binary-tree.png)
-
-
+![binary-tree](https://github.com/un01s/code-exercises/blob/main/media/binary-tree.png)
 
 ## problems of binary tree
 
