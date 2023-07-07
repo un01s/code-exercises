@@ -35,3 +35,7 @@ The order of learning is to follow basic data structures and common algorithms b
 
 * [algorithm](https://github.com/labuladong/fucking-algorithm)
 
+* [leetcode practices](https://github.com/keineahnung2345/leetcode-cpp-practices)
+
+* [leetcode wang](https://github.com/wind-liang/leetcode)
+

@@ -31,3 +31,23 @@ struct TreeNode {
 };
 ```
 
+## problems of binary tree
+
+### traversal
+
+* [preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+* [inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+* [postorder traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+* [level order traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
+* [zigzag level traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+* [level order traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
+
+use queue iteratively for level order traversal.
+
+1. construct a queue with TreeNode, ```queue<TreeNode* > q;```, initially push the given root in it
+2. iterate through the queue until empty
+    1. store the current size of queue ```tempSize```, this will be the size of the current level of the tree.
+    2. now traverse this level for ```tempSize>=0```: pop the current element and apply the needed operation for the same and if left or right child exist then pass them to the queue.
+
+
+
