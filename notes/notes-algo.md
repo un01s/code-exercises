@@ -35,4 +35,5 @@ When ```stack.top = 0```, the stack is empty. Upon an attempt to pop an empty st
 
 #### queues
 
+Usually a stack allows insertion and deletion of elements at only one end (stack.top), and a queue allows insertion and deletion at the other end (tail for insertion, and head for deletion). There is a ```deque``` that is a double-ended queue. A deque allows insertion and deletion at both ends.
 
