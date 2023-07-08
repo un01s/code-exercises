@@ -125,5 +125,17 @@ void list-delete(ListNode* head, ListNode x) {
 
 #### sentinels basically are virtual head nodes to simplify the code
 
+#### exercise
 
+* 10.2-2 implement a stack using a singly linked list
+* 10.2-3 implement a queue using a singly linked list
 
+### rooted trees
+
+Linked lists work well for representing linear relationahip. But no all relationships are linear.
+
+#### binary tree
+
+Each element or node has the attributes **p**, **left** and **right** for pointers to store the parent, left child, adn right child. If ```x.p == nullptr```, then x is the root. If ```x.left ==  nullptr```, then the node x has no left child.
+
+ 
