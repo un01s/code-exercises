@@ -64,3 +64,61 @@ struct ListNode {
 
 The linked list may be either singly linked or doubly linked. It may be sorted or not based on the keys of its elements. It may be circular or not. 
 
+For the singly linked list, the head node is bit different from the other nodes. In actual code, introducing **a virtual head** makes all nodes the same.
+
+#### searching a linked list
+
+```C++
+ListNode* list-search(ListNode* head, int key) {
+    ListNode* x = head;
+    while (x != nullptr && x.val != key) {
+        x = x.next;
+    }
+    return x;
+}
+```
+
+#### inserting into a linked list
+
+Do we still need to maintain a head of a linked list?
+
+```
+void list-prepend(ListNode* head, ListNode x) {
+    x.next = head;
+    x.prev = nullptr; // doubly-linked list
+    if (head != nullptr) {
+        head->prev = &x;
+    }
+    head = &x;
+}
+```
+
+the following insert one element x right after y
+
+```
+void list-insert(ListNode* x, ListNode* y) {
+    x->next = y->next;
+    x->prev = y;
+    if (y->next != nullptr) {
+        y->next.prev = x;
+    }
+    y->next = x;
+}
+```
+
+#### deleting from a linked list
+
+```
+void list-delete(ListNode* head, ListNode x) {
+    if (x.prev != nullptr) {
+        x.prev.next = x.next;
+    } else {
+        head = x.next;
+    }
+    if (x.next != nullptr) {
+        x.next.prev = x.prev;
+    }
+}
+```
+
+
