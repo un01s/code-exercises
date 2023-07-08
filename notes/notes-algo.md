@@ -37,3 +37,30 @@ When ```stack.top = 0```, the stack is empty. Upon an attempt to pop an empty st
 
 Usually a stack allows insertion and deletion of elements at only one end (stack.top), and a queue allows insertion and deletion at the other end (tail for insertion, and head for deletion). There is a ```deque``` that is a double-ended queue. A deque allows insertion and deletion at both ends.
 
+### linked list
+
+A linked list is a data structure in which its elements are arranged in a linear order by its pointer in each element.
+
+A singly linked list:
+
+```C++
+struct ListNode {
+    int val; // key
+    ListNode* next;
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+```
+
+A doubly linked list:
+
+```C++
+struct ListNode {
+    int val; // key
+    ListNode* next;
+    ListNode* prev;
+    ListNode(int x) : val(x), next(nullptr), prev(nullptr) {}
+};
+```
+
+The linked list may be either singly linked or doubly linked. It may be sorted or not based on the keys of its elements. It may be circular or not. 
+
