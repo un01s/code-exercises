@@ -66,6 +66,8 @@ The linked list may be either singly linked or doubly linked. It may be sorted o
 
 For the singly linked list, the head node is bit different from the other nodes. In actual code, introducing **a virtual head** makes all nodes the same.
 
+The pseudo code below is all about operations on a doubly linked list.
+
 #### searching a linked list
 
 ```C++
@@ -120,5 +122,8 @@ void list-delete(ListNode* head, ListNode x) {
     }
 }
 ```
+
+#### sentinels basically are virtual head nodes to simplify the code
+
 
 
