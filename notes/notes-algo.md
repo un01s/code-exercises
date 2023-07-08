@@ -82,7 +82,7 @@ ListNode* list-search(ListNode* head, int key) {
 
 Do we still need to maintain a head of a linked list?
 
-```
+```C++
 void list-prepend(ListNode* head, ListNode x) {
     x.next = head;
     x.prev = nullptr; // doubly-linked list
@@ -95,7 +95,7 @@ void list-prepend(ListNode* head, ListNode x) {
 
 the following insert one element x right after y
 
-```
+```C++
 void list-insert(ListNode* x, ListNode* y) {
     x->next = y->next;
     x->prev = y;
@@ -108,7 +108,7 @@ void list-insert(ListNode* x, ListNode* y) {
 
 #### deleting from a linked list
 
-```
+```C++
 void list-delete(ListNode* head, ListNode x) {
     if (x.prev != nullptr) {
         x.prev.next = x.next;
