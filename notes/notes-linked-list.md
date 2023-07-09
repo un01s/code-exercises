@@ -68,3 +68,7 @@ The equation is ```(x + y)*2 = x + y + n*(y + z)```. To find the entry node, x i
 
 Now if we have two pointers, if one starts from the head node, and the other starts from the met node, when these two pointer met, it is where the entry node is.
 
+## doubly linked list TODO
+
+146, 432, 460, 716, 426, 430, 1472, 2296
+

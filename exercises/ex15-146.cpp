@@ -39,12 +39,11 @@ private:
 
     void addNode(Node* n) {
         Node* beforeTail = tail->prev;
-
         beforeTail->next = n;
         n->next = tail;
         tail->prev = n;
         n->prev = beforeTail;
-        // check the capacity of
+        // check the capacity?
     }
 
     void removeNode(Node* n) {
@@ -147,8 +146,8 @@ public:
 
 int main() {
  
-    //LRUCache* cache = new LRUCache(2);
-    LRUCache2* cache = new LRUCache2(2);
+    LRUCache* cache = new LRUCache(2);
+    //LRUCache2* cache = new LRUCache2(2);
 
     cache->put(1, 1);
     cache->put(2, 2);
