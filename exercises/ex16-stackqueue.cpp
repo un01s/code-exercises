@@ -1,5 +1,6 @@
 /*
  * use two stacks to implement a queue
+ * leetcode 232
  *
  * we have two stacks stIn, and stOut. Push into the stIn, pop from the stOut.
  * whenever pop, move the elements from stIn to stOut, stOut.push(stIn.pop()),
