@@ -24,30 +24,62 @@ public:
     }
 
     int pop() {
-        if(!stOut.empty()) {
-            int res = stOut.top();
-            stOut.pop();
-            return res;
-        } else {
-            // copy from input stack
-            while(!stIn.empty()) {
-                stOut.push(stIn.top());
-                stIn.pop();
-            }
-            int res = stOut.top();
-            stOut.pop();
-            return res;
-        }
-    }
-
-    int peek() {
         if (stOut.empty()) {
             while(!stIn.empty()) {
                 stOut.push(stIn.top());
                 stIn.pop();
             }
+        } else {
+            stack<int> tmp;
+            while(!stOut.empty()) {
+                tmp.push(stOut.top());
+                stOut.pop();
+            }
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+            while(!tmp.empty()) {
+                stOut.push(tmp.top());
+                tmp.pop();
+            }
         }
-        return stOut.top();
+        if(!stOut.empty()) {
+            int res = stOut.top();
+            stOut.pop();
+            return res;
+        } else {
+            return NULL;
+        }
+    }
+
+    int peek() {
+        if(stOut.empty()) {
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+        } else {
+            stack<int> tmp;
+            while(!stOut.empty()) {
+                tmp.push(stOut.top());
+                stOut.pop();
+            }
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+            while(!tmp.empty()) {
+                stOut.push(tmp.top());
+                tmp.pop();
+            }
+        }
+        if (!stOut.empty()) {
+            int res = stOut.top();
+            return res;
+        } else {
+            return NULL;
+        }
     }
 
     bool empty() {
@@ -59,10 +91,12 @@ int main() {
     MyQueue* q = new MyQueue();
     q->push(1);
     q->push(2);
-    q->push(3);
     cout << "top: " << q->peek() << endl;
-    q->pop();
-    cout << "top: " << q->peek() << endl;
-
+    cout << "pop: " << q->pop() << endl;
+    if (q->empty()) {
+        cout << "q is empty" << endl;
+    } else {
+        cout << "q is NOT empty" << endl;
+    }
     return 0;
 }
