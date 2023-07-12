@@ -18,6 +18,7 @@ public:
         // queue push to back
         q.push(x);
         for(int i = 0; i < q.size()-1; i++) {
+            cout << "[push] q.front: " << q.front() << endl;
             q.push(q.front());
             q.pop();
         } 
@@ -25,6 +26,7 @@ public:
     
     int pop() {
         int res = q.front();
+        cout << "[pop] q.front: " << q.front() << endl;
         q.pop();
         return res;
     }
