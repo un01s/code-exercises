@@ -32,17 +32,58 @@ public:
                 stOut.push(stIn.top());
                 stIn.pop();
             }
+        } else {
+            stack<int> tmp;
+            while(!stOut.empty()) {
+                tmp.push(stOut.top());
+                stOut.pop();
+            }
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+            while(!tmp.empty()) {
+                stOut.push(tmp.top());
+                tmp.pop();
+            }
         }
-        int result = stOut.top();
-        stOut.pop();
+        if (!stOut.empty()) {
+            int result = stOut.top();
+            stOut.pop();
 
-        return result;
+            return result;
+        } else {
+            return NULL;
+        }
     }
     
     int peek() {
-        int res = this->pop();
-        stOut.push(res); 
-        return res;
+        if(stOut.empty()) {
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+        } else {
+            stack<int> tmp;
+            while(!stOut.empty()) {
+                tmp.push(stOut.top());
+                stOut.pop();
+            }
+            while(!stIn.empty()) {
+                stOut.push(stIn.top());
+                stIn.pop();
+            }
+            while(!tmp.empty()) {
+                stOut.push(tmp.top());
+                tmp.pop();
+            }
+        }
+        if (!stOut.empty()) {
+            int res = stOut.top();
+            return res;
+        } else {
+            return NULL;
+        }
     }
     
     bool empty() {
