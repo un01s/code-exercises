@@ -5,6 +5,10 @@
  *
  * 
  * 2023-07-13
+ * 
+ * TODO 2290. hard
+ * minimum obstacle removal to reach center
+ *
  */
 
 #include <iostream>
