@@ -145,4 +145,7 @@ class Solution {
 
 ### balanced BST (AVL tree)
 
+## binary tree level traversal
+
+102, 107, 199, 637, 429, 515, 116, 117, 104, 111
 
