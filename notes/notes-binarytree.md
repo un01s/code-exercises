@@ -20,6 +20,9 @@ either linked-list or array
 
 depth vs. breadth
 
+use stack to traverse a binary tree : depth-first (recursive)
+use queue to traverse a binary tree : breadth-first
+
 ## binary tree
 
 ```C++
