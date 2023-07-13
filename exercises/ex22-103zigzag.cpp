@@ -20,7 +20,7 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 };
 
-// this does not cover all the cases!
+// now it is correct!
 class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
@@ -34,17 +34,14 @@ public:
             for (int i = 0; i < s; i++) {
                 TreeNode* n = q.front();
                 q.pop();
-                v.push_back(n->val);
-                cout << "Order=" << order << ":"; 
-                if (order == 0) {
-                    if (n->right) q.push(n->right);
-                    if (n->left) q.push(n->left);
-                    //order = 1;
+                if (order%2 == 0) {
+                    v.push_back(n->val);
                 } else {
-                    if (n->left) q.push(n->left);
-                    if (n->right) q.push(n->right);
-                    //order = 0;
+                    v.insert(v.begin(), n->val);
                 }
+                cout << "Order=" << order << ":"; 
+                if (n->left) q.push(n->left);
+                if (n->right) q.push(n->right);
             }
             order++;
             for (int j = 0; j < s; j++) {
