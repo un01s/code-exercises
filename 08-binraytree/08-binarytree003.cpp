@@ -38,7 +38,6 @@ public:
         while(!que.empty()) {
             int size = que.size();
             vector<int> v;
-            // use fixed size not que.size() because it is changing
             for(int i = 0; i < size; i++) {
                 TreeNode* n = que.front();
                 que.pop();
