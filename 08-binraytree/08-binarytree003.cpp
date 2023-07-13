@@ -14,6 +14,10 @@
  *
  * 2023-07-13
  *
+ * TODO: 107 binary tree level order traversal
+ * TODO: 103 binary tree zigzag level order traversal
+ * TODO: 111 minimum depth of binary tree
+ *
  */
 
 #include <iostream>
