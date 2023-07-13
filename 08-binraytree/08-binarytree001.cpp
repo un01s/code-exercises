@@ -33,9 +33,9 @@ class Solution {
 public:
     void traversal(TreeNode* cur, vector<int>& vec) {
         if (cur == NULL) return;
-        vec.push_back(cur->val);
-        traversal(cur->left, vec);
-        traversal(cur->right, vec);
+        vec.push_back(cur->val); // mid (root)
+        traversal(cur->left, vec); // left
+        traversal(cur->right, vec); // right
     }
     vector<int> preorderTraversal(TreeNode* root) {
         vector<int> result;

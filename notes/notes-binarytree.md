@@ -46,9 +46,9 @@ So the order is based on the mid node (or root node).
 
 ### traversal
 
-* [preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
-* [inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
-* [postorder traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
+* [144 preorder traversal](https://leetcode.com/problems/binary-tree-preorder-traversal/)
+* [94 inorder traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
+* [145 postorder traversal](https://leetcode.com/problems/binary-tree-postorder-traversal/)
 * [level order traversal](https://leetcode.com/problems/binary-tree-level-order-traversal/)
 * [zigzag level traversal](https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 * [level order traversal II](https://leetcode.com/problems/binary-tree-level-order-traversal-ii/)
@@ -61,5 +61,85 @@ use queue iteratively for level order traversal.
     2. now traverse this level for ```tempSize>=0```: pop the current element and apply the needed operation for the same and if left or right child exist then pass them to the queue.
 
 Check out [this binary problem list](https://leetcode.com/discuss/study-guide/1212004/Binary-Trees-study-guide).
+
+#### pre-order iterative traversal with stack
+
+```C++
+class Solution {
+    vector<int> preorderTraversal(TreeNode* root) {
+        stack<TreeNode*> st;
+        vector<int> result;
+        // the order of traversal and processing is the same
+        if (root == nullptr) return result;
+        st.push(root); // mid, left, right
+        while(!st.empty()) {
+            TreeNode* node = st.pop();
+            st.pop();
+            result.push_back(node->val);
+            if (node->right) st.push(node->right);
+            if (node->left) st.push(node->left);
+        }
+        return result;
+    }
+};
+```
+
+#### in-order iterative traversal
+
+```C++
+class Solution {
+    vector<int> inorderTraversal(TreeNode* root) {
+        stack<TreeNode*> st;
+        vector<int> result;
+        // the order of traversal and processing is different
+        // 1. processing: put val into result
+        // 2. traverse nodes
+        TreeNode* cur = root;
+        while(cur != nullptr || !st.empty()) {
+            if (cur != nullptr) {
+                st.push(cur); // traverse till the end
+                cur = cur->left; // left
+            } else {
+                cur = st.top(); // get the node from the stack to process
+                st.pop();
+                result.push_back(cur->val); // mid
+                cur = cur->right; // right
+            }
+        }
+        return result;
+    }
+};
+```
+
+#### post-order iterative traversal
+
+```C++
+class Solution {
+    vector<int> postorderTraversal(TreeNode* root) {
+        stack<TreeNode*> st;
+        vector<int> result;
+        if (root == nullptr) return result;
+        st.push(root);
+        while(!st.empty()) {
+            TreeNode* node = st.top();
+            st.pop();
+            result.push_back(node->val); // mid
+            if (node->left) st.push(node->left); // left
+            if (node->right) st.push(node->right); // right 
+        }
+        reverse(result.begin(), result.end()); // to get left, right, mid
+        return result;
+    }
+};
+```
+## binary search tree
+
+### BST is a sorted or ordered binary tree. 
+
+* if its left sub-tree is not empty, the values of all left sub-tree nodes are less than its root value
+* if its right sub-tree is not empty, the values of all right sub-tree nodes are greater than its root value
+* both left sub-tree and right sub-tree are BST too
+
+### balanced BST (AVL tree)
 
 
