@@ -27,9 +27,9 @@ struct TreeNode {
 
 class Solution {
 public:
-    int maxDepth = INT_MIN;
+    int maxDepth = 0;
     int result;
-    void travesal(TreeNode* root, int depth) {
+    void traversal(TreeNode* root, int depth) {
         if (root->left == nullptr && root->right == nullptr) {
             if (depth > maxDepth) {
                 maxDepth = depth;
@@ -38,14 +38,16 @@ public:
             return;
         }
         if (root->left) {
-            depth++;
-            traversal(root->left, depth);
-            depth--; // back tracking
+            //depth++;
+            //traversal(root->left, depth);
+            //depth--; // back tracking
+            traversal(root->left, depth+1);
         }
         if (root->right) {
-            depth++;
-            traversal(root->right, depth);
-            depth--; // back tracking
+            //depth++;
+            //traversal(root->right, depth);
+            //depth--; // back tracking
+            traversal(root->right, depth+1);
         }
         return; 
     }
