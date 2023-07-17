@@ -34,7 +34,7 @@ public:
 };
 
 // dp less memory
-class Solution2 {
+class Solution3 {
 public:
     int fib(int n) {
         if (n <= 1) return n;
