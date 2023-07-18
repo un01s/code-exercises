@@ -7,8 +7,9 @@
  * if its left sub-tree is not empty, all node values are less than its root value
  * if its right sub-tree is not empty, all node values are greater than its root value
  *
- * if overlapped, the sum of their values as new value
- * the null node will be the node 
+ * the big difference between a BST and an ordinary binary tree is that the BST is ordered.
+ * the traversal of a BST does not require the backtracking.
+ * the traversal of an ordinary binary tree usually has the back tracking.
  * 
  * 2023-07-18
  *
