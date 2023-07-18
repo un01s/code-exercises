@@ -59,6 +59,15 @@ public:
         if (root->val < val) return bst(root->right, val);
         return nullptr;
     }
+    // iterative
+    TreeNode* iterativeBST(TreeNode* root, int val) {
+        while(root != nullptr) {
+            if (root->val > val) root = root->left;
+            else if (root->val < val) root = root->right;
+            else return root;
+        }
+        return nullptr;
+    }
 };
 
 int main() {
