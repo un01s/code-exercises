@@ -25,14 +25,15 @@ class Solution {
 public:
     TreeNode* traversal(TreeNode* cur, TreeNode* p, TreeNode* q) {
         if (cur == nullptr) return cur;
-
+        // search one-side of tree
         if (cur->val > p->val && cur->val > q->val) {
             TreeNode* left = traversal(cur->left, p, q);
             if (left != nullptr) {
                 return left;
             }
         }
-
+        // search another side of tree
+        // this tree is BST! not need to search the whole subtree!
         if (cur->val < p->val && cur->val < q->val) {
             TreeNode* right = traversal(cur->right, p, q);
             if (right != nullptr) {
