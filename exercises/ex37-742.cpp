@@ -26,6 +26,16 @@ struct TreeNode {
     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
+TreeNode* convertArray(vector<int>& nums) {
+    TreeNode* root = new TreeNode(nums[0]);
+    for(int i = 1; i < nums.size(); i++) {
+        if (nums[i] != -1) {
+            
+        }
+    }
+    return root;
+}
+
 class Solution {
 public:
     void helper(TreeNode* node, int cur, unordered_map<int, int>& m, int& mn, int& res) {
@@ -70,11 +80,18 @@ public:
 
 int main() {
     int a[] = {1, 3, 2};
-    vector<int> t1(a, a + sizeof(a)/sizeof(int)); 
+    vector<int> v1(a, a + sizeof(a)/sizeof(int)); 
     int k1 = 1;
     int a1 = 2; // or 3
 
-    
+    Solution s;
+    TreeNode* t1 = convertArray(v1);
+    if (2 == s.findClosestLeaf(t1, k1) || 3 == s.findClosestLeaf(t1, k1)) {
+        cout << "test1 OK" << endl;
+    } else {
+        cout << "test1 failed" << endl;
+    }
+
     return 0;
 }
 
