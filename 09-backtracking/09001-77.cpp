@@ -13,6 +13,19 @@ using namespace std;
 
 class Solution {
 public:
+    // helper to debug
+    void show(vector<vector<int> >& v) {
+        cout << "[ ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << "[ ";
+            for(int j = 0; j < v[0].size(); j++) {
+                cout << v[i][j] << " ";
+            }
+            cout << "]";
+        }
+        cout << " ]" << endl;
+    }
+
     // two globals for results
     vector<vector<int> > res;
     vector<int> path;
@@ -41,6 +54,13 @@ public:
 };
 
 int main() {
+    // test case 1
+    int n = 4;
+    int k = 2;
+
+    Solution s;
+    vector<vector<int> > v = s.combine(n, k);
+    s.show(v);
 
     return 0;
 }
