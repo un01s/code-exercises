@@ -68,7 +68,7 @@ public:
             path.pop_back();
         }
     }    
-    vector<vector<int> > combinationSum(vector<int>& candidates, int target) {
+    vector<vector<int> > combinationSum2(vector<int>& candidates, int target) {
         vector<bool> used(candidates.size(), false);
         res.clear();
         path.clear();
@@ -76,6 +76,61 @@ public:
         backtracking(candidates, target, 0, 0, used); // sum = 0, index = 0 
         return res;       
     }  
+};
+
+// without using used as the above
+class Solution2 {
+public:
+    // helper to debug
+    void show(vector<vector<int> >& v) {
+        cout << "[ ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << "[ ";
+            for(int j = 0; j < v[0].size(); j++) {
+                cout << v[i][j] << " ";
+            }
+            cout << "]";
+        }
+        cout << " ]" << endl;
+    }
+
+private:
+    vector<vector<int> > result;
+    vector<int> path;
+    void backtracking(vector<int>& candidates, int target, int sum, int startIndex) {
+        if (sum == target) {
+            result.push_back(path);
+            return;
+        }
+        for (int i = startIndex; i < candidates.size() && sum + candidates[i] <= target; i++) {
+            // have to avoid the used element in candidates at the same tree level
+            // here use the index and i together to bypass the same candidate
+            // still the sorting of candidates are critical!
+            // without the sorting before passed into the function call
+            // the result is not correct!
+            if (i > startIndex && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+            sum += candidates[i];
+            path.push_back(candidates[i]);
+            backtracking(candidates, target, sum, i + 1); 
+            // the difference from leetcode 39:
+            // in problem 39, duplicates are allowed
+            // here in problem 40, no duplicate are allowed
+            sum -= candidates[i];
+            path.pop_back();
+        }
+    }
+
+public:
+    vector<vector<int> > combinationSum2(vector<int>& candidates, int target) {
+        path.clear();
+        result.clear();
+        // sorting makes duplicates stay together
+        sort(candidates.begin(), candidates.end());
+        backtracking(candidates, target, 0, 0);
+        return result;
+    }
 };
 
 int main() {
@@ -87,13 +142,14 @@ int main() {
     vector<int> v2(c2, c2+sizeof(c2)/sizeof(int));
 
     Solution s;
-    vector<vector<int> > v = s.combinationSum(v1, t1);
+    //Solution2 s;
+    vector<vector<int> > v = s.combinationSum2(v1, t1);
     s.show(v);
 /*
 [ [ 1 1 6 ][ 1 2 5 ][ 1 7 0 ][ 2 6 0 ] ]
 */
     v.clear();
-    v = s.combinationSum(v2, t2);
+    v = s.combinationSum2(v2, t2);
     s.show(v);
 /*
 [ [ 1 2 2 ][ 5 0 0 ] ]
