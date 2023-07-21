@@ -7,6 +7,19 @@
  *
  * 2023-07-20
  *
+ * to think this through
+ * 1. take a string, "25525511135"
+ * 2. at first level, we take the substring 2, then 25, 255, and etc.
+ * 3. at the next level, we take the second cut from the level1
+ * 4. at the third level, take a third cut after the level2.
+ * 
+ * at each level, we have to valid the cut we take, the substring must be valid
+ * or, it make the result invalid.
+ * 
+ * another particular thing is to add dot after each valid cut.
+ * three cuts of a string results in four segments. 
+ * if every segment is valid, then these cuts are valid.
+ * 
  */
 
 #include <iostream>
