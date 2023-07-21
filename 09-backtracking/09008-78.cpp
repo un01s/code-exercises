@@ -68,11 +68,52 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    // helpers
+    void showVector(vector<int>& v) {
+        cout << "[ ";
+        for(int j = 0; j < v.size(); j++) {
+            cout << v[j] << " ";
+        }
+        cout << "]";
+    }
+    void show(vector<vector<int> >& v) {
+        cout << "[ ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << "[ ";
+            for(int j = 0; j < v[0].size(); j++) {
+                cout << v[i][j] << " ";
+            }
+            cout << "]";
+        }
+        cout << " ]" << endl;
+    }
+
+    vector<vector<int> > subsets(vector<int>& nums) {
+        vector<int> curr;
+        vector<vector<int> > result;
+        dfs(nums, 0, curr, result);
+        return result;
+    }
+private:
+    void dfs(vector<int>& nums, int start, vector<int>& curr, vector<vector<int> >& result) {
+        result.push_back(curr);
+        showVector(curr);
+
+        for (int i = start; i < nums.size(); i++) {
+            curr.push_back(nums[i]);
+            dfs(nums, i + 1, curr, result);
+            curr.pop_back();
+        }
+    }
+};
+
 int main() {
     int a[] = {1, 2, 3};
     vector<int> v1(a, a+sizeof(a)/sizeof(int));
  
-    Solution s;
+    Solution2 s;
     vector<vector<int> > v = s.subsets(v1);
     s.show(v);
 
