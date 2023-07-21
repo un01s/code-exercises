@@ -12,6 +12,13 @@
  * a tree, then the combination and substring problems are collecting the leaf
  * nodes of the tree, and the subsets problem is looking for all nodes.
  *
+ * the strange thing is that the code runs OK with Leetcode which uses Linux 
+ * at the backend. 
+ * however, the macOS returns all empty subsets.
+ * the clue is that the first empty subset is push into the vector,
+ * this may cause no space for subsequent addon.
+ * STRANGE!
+ *
  */
 
 #include <iostream>
@@ -110,6 +117,12 @@ private:
 };
 
 // the following works OK at Leetcode
+// this is still backtracking
+// why there is no termination condition?
+// because the input array is limited
+// once the for-loop is done, the recursion will stop too.
+// here every nodes are collected.
+//
 class Solution3 {
 public:
     vector<int> curr;
