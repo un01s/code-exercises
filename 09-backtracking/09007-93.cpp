@@ -93,6 +93,22 @@ int main() {
     vector<string> vs = s.restoreIpAddresses(s1);
     s.show(vs);
 
+    vs.clear();
+    vs = s.restoreIpAddresses(s2);
+    s.show(vs);
+
+    vs.clear();
+    vs = s.restoreIpAddresses(s3);
+    s.show(vs);
+
+    vs.clear();
+    vs = s.restoreIpAddresses(s4);
+    s.show(vs);
+
+    vs.clear();
+    vs = s.restoreIpAddresses(s5);
+    s.show(vs);
+
     return 0;
 }
 
