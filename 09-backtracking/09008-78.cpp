@@ -109,6 +109,30 @@ private:
     }
 };
 
+// the following works OK at Leetcode
+class Solution3 {
+public:
+    vector<int> curr;
+    vector<vector<int> > result;
+
+    void dfs(vector<int>& nums, int start) {
+        result.push_back(curr);
+        for (int i = start; i < nums.size(); i++) {
+            curr.push_back(nums[i]);
+            dfs(nums, i + 1);
+            curr.pop_back();
+        }
+    }
+
+    vector<vector<int> > subsets(vector<int>& nums) {
+        curr.clear();
+        result.clear();
+
+        dfs(nums, 0);
+        return result;
+    }
+};
+
 int main() {
     int a[] = {1, 2, 3};
     vector<int> v1(a, a+sizeof(a)/sizeof(int));
