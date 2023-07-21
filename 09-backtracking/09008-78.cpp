@@ -19,6 +19,11 @@
  * this may cause no space for subsequent addon.
  * STRANGE!
  *
+ * In the end, it is just a type, instead of using v[i], v[0].size is used.
+ * this causes the rest of the array is not printed properly.
+ *
+ * $ clang++ -Wall -std=c++11 09008-78.cpp -o test
+ *
  */
 
 #include <iostream>
@@ -41,7 +46,8 @@ public:
         cout << "[ ";
         for(int i = 0; i < v.size(); i++) {
             cout << "[ ";
-            for(int j = 0; j < v[0].size(); j++) {
+            // my bad, using v[0] instead of v[i]
+            for(int j = 0; j < v[i].size(); j++) {
                 cout << v[i][j] << " ";
             }
             cout << "]";
@@ -89,7 +95,7 @@ public:
         cout << "[ ";
         for(int i = 0; i < v.size(); i++) {
             cout << "[ ";
-            for(int j = 0; j < v[0].size(); j++) {
+            for(int j = 0; j < v[i].size(); j++) {
                 cout << v[i][j] << " ";
             }
             cout << "]";
@@ -125,6 +131,20 @@ private:
 //
 class Solution3 {
 public:
+    void show(vector<vector<int> >& v) {
+        cout << "[ ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << "[ ";
+            // my bad, using v[0] instead of v[i]
+            for(int j = 0; j < v[i].size(); j++) {
+                cout << v[i][j] << " ";
+            }
+            cout << "]";
+        }
+        cout << " ]" << endl;
+    }
+
+
     vector<int> curr;
     vector<vector<int> > result;
 
@@ -150,7 +170,7 @@ int main() {
     int a[] = {1, 2, 3};
     vector<int> v1(a, a+sizeof(a)/sizeof(int));
  
-    Solution2 s;
+    Solution3 s;
     vector<vector<int> > v = s.subsets(v1);
     s.show(v);
 
