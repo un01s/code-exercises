@@ -18,16 +18,24 @@ using namespace std;
 class Solution {
 public:
     vector<string> splitWordsBySeparator(vector<string>& words, char separator) {
-        int k = 0;
         vector<string> res;
-        for (int i = 0; i < words.size(); i++) {
-            for (
-            cout << words[i] << endl;
-            if (words[i] == separator) {
-                string s = words.substr(words.begin()+k, words.begin()+k+i);
-                if (!s.empty()) {
-                    res.push_back(s);
+        string tmp = "";
+        for(int i = 0; i < words.size(); i++) {
+            tmp = "";
+            for(int j = 0; j < words[i].size(); j++) {
+                if (words[i][j] != separator) {
+                    tmp += words[i][j];
+                } else {
+                    if (tmp.size() >= 1) {
+                        cout << tmp << endl;
+                        res.push_back(tmp);
+                    }
+                    tmp = "";
                 }
+            }
+            if (tmp.size() >= 1) {
+                cout << tmp << endl;
+                res.push_back(tmp);
             }
         }
         return res;
@@ -35,7 +43,16 @@ public:
 };
 
 int main() {
-    strings s1[] = {"one.two.three","four.five","six"};
-    
+    string s1[] = {"one.two.three","four.five","six"};
+    char separator = '.';
+
+    vector<string> v1(3);
+    v1[0] = "one.two.three";
+    v1[1] = "four.five";
+    v1[2] = "six";
+
+    Solution s;
+    s.splitWordsBySeparator(v1, separator);
+
     return 0;
 }
