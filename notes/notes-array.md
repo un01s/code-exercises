@@ -28,6 +28,18 @@ All the code in C++ uses vector instead of array in LeetCode. Though vector is b
 * c++ only contruct
 * implemented as a dynamic array, changeable
 
+### array vs linked-list
+
+|   | array | linked list |
+| - | ----- | ----------- |
+| storage | continuous | discreet |
+| size | not changeable | changeable |
+| memory usage | less, cache | more |
+| advantage | random access | insert and remove |
+| access | O(1) | O(N) |
+| insert | O(N) | O(1) |
+| remove | O(N) | O(1) |
+
 ## notes on 02-array006.cpp [54 spiral matrix](https://leetcode.com/problems/spiral-matrix/)
 
 Before this problem, all the solutions are from others. This code is all by myself.
