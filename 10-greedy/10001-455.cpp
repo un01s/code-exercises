@@ -8,6 +8,12 @@
  *
  * 2023-07-24
  *
+ * not two loops here but only one for-loop
+ * another one uses self-decrement!
+ * 
+ * either big cookie for big appetite
+ * or small appetite for small cookie
+ *
  */
 
 #include <iostream>
