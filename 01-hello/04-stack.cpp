@@ -10,6 +10,7 @@
 using namespace std;
 
 // use linked list to implement stack
+// use the head of a linked list as the top of the stack
 struct ListNode {
     int val;
     ListNode* next;
@@ -66,6 +67,35 @@ public:
         return stackTop->val;
     }
 };
+
+
+// use array to implement stack
+// use the tail of array as the top of the stack
+class ArrayStack {
+private:
+    vector<int> st;
+public:
+    int size() {
+        return st.size();
+    }
+    bool empty() {
+        return st.empty();
+    }
+    void push(int val) {
+        st.push_back(val);
+    }
+    void pop() {
+        int oldTop = top();
+        st.pop_bacK();
+    }
+    int top() {
+        if (empty()) {
+            throw out_of_range("out of range");
+        }
+        return st.back();
+    }
+};
+
 
 int main() {
     // basic stack operations
