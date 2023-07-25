@@ -43,6 +43,18 @@ public:
     }
 };
 
+// best XOR
+class Solution3 {
+public:
+    int singleNumber(vector<int>& nums) {
+        int r = 0;
+        for(int i = 0; i < nums.size(); i++) {
+            r ^= nums[i];
+        }
+        return r; // XOR is the best solution, simple and fast
+    }
+};
+
 
 int main() {
     return 0;
