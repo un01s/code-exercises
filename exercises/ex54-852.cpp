@@ -28,6 +28,18 @@ public:
     }
 };
 
+// easy simpler, as linear scan, shown in editorial
+class Solution2 {
+public:
+    int peakIndexInMountainArray(vector<int>& arr) {
+        int i = 0;
+        while(arr[i] < arr[i+1]) {
+            i++;
+        }
+        return i;
+    }
+};
+
 int main() {
     int a[] = {0, 1, 0};
     int r1 = 1;
