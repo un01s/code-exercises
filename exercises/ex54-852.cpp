@@ -40,6 +40,21 @@ public:
     }
 };
 
+// binary search
+class Solution3 {
+public:
+    int peakIndexInMountainArray(vector<int>& arr) {
+        // binary search
+        int l = 0, r = arr.size()-1, mid;
+        while(l < r) {
+            mid = (l+r)/2;
+            if (arr[mid] < arr[mid+1]) l = mid+1;
+            else r = mid;
+        }
+        return l;
+    }
+};
+
 int main() {
     int a[] = {0, 1, 0};
     int r1 = 1;
