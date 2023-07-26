@@ -91,5 +91,11 @@ the idea of sliding window is simple. Keep two pointers, left and right to form 
 
 * [longest substring without repeating characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
+## some references on two-pointers and sliding window
 
+Two-pointer or sliding window is one of patterns and templates to solve some problems.
+
+* https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
+* https://ithelp.ithome.com.tw/articles/10303527
+* https://github.com/wisdompeak/LeetCode/tree/master/Template
 
