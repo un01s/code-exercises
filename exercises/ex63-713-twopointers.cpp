@@ -18,7 +18,7 @@
  * reference:
  *
  * https://blog.techbridge.cc/2019/08/30/leetcode-pattern-two-pointer/
- * 
+ * https://ithelp.ithome.com.tw/articles/10303527 
  */
 
 #include <iostream>
