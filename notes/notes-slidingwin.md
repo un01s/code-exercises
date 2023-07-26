@@ -1,5 +1,19 @@
 # sliding window
 
+sliding window is a special form of two-pointer approach.
+
+Check out the following problems and solutions.
+
+* [leetcode 167](https://github.com/un01s/code-exercises/blob/main/exercises/ex60-167-twopointers.cpp)
+
+* [leetcode 977](https://github.com/un01s/code-exercises/blob/main/exercises/ex61-977-twopointers.cpp)
+
+* [leetcode 15](https://github.com/un01s/code-exercises/blob/main/exercises/ex62-15-twopointers.cpp)
+
+* [leetcode 713](https://github.com/un01s/code-exercises/blob/main/exercises/ex63-713-twopointers.cpp)
+
+## examples
+
 the general idea of sliding window is simple. 
 
 ```C++
