@@ -37,6 +37,20 @@ The order of learning is to follow basic data structures and common algorithms b
 
 * [leetcode algo](https://github.com/doocs/leetcode)
 
+* [c++ primer](https://github.com/pezy/CppPrimer)
+
+* some c++ book list
+
+  * [design patterns](https://github.com/pezy/DesignPatterns)
+
+  * [cpp books](https://github.com/saeed771/cpp_book)
+
+  * [awesone modern cpp](https://github.com/rigtorp/awesome-modern-cpp)
+
+  * https://github.com/yuchdev/CppBooks
+
+  * https://gist.github.com/tassoevan/0f7edd03e19f9674df07
+
 * [algorithm](https://github.com/labuladong/fucking-algorithm)
 
 * [leetcode practices](https://github.com/keineahnung2345/leetcode-cpp-practices)
