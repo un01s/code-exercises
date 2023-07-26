@@ -37,6 +37,24 @@ public:
     }
 };
 
+// simpler
+class Solution2 {
+public:
+    int reverse(int x) {
+        long r = 0;
+        while(x!=0){
+            r=r*10+x%10;
+            x/=10;
+        }
+        if( INT_MIN <= r && r <= INT_MAX){
+            if(x<0) return -1*r;
+            else return r;
+        }else{
+            return 0;
+        }
+    }
+};
+
 int main() {
 
     int a = -123;
