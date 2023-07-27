@@ -51,6 +51,54 @@ public:
     }
 };
 
+// this uses the range to solve the problem.
+// more complex than the first solution
+// 
+class Solution2 {
+public:
+    static bool cmp(vector<int>& a, vector<int>& b) {
+        return a[0] < b[0]; // from small to big
+    }
+    // count the range of each letter instead of the farthest position
+    vector<vector<int> > countRange(string s) {
+        vector<vector<int> > hash(26, vector<int>(2, INT_MIN));
+        vector<vector<int> > hash_filter;
+        for (int i = 0; i < s.size(); i++) {
+            if (hash[s[i]-'a'][0] == INT_MIN) {
+                hash[s[i]-'a'][0] = i;
+            } // starting position
+            hash[s[i]-'a'][1] = i; // ending position
+        }
+        // remove the range for letters not appear in the string
+        for (int i = 0; i < hash.size(); i++) {
+            if (hash[i][0] != INT_MIN) {
+                hash_filter.push_back(hash[i]);
+            }
+        }
+        return hash_filter;
+    }
+    // 
+    vector<int> partitionLabels(string S) {
+        vector<int> res;
+        // ranges
+        vector<vector<int> > hash = countRange(S);
+        sort(hash.begin(), hash.end(), cmp); // use the left boundaries to sort
+        // record the farthest right boundary
+        int right = hash[0][1];
+        int left = 0;
+        for (int i = 1; i < hash.size(); i++) {
+            // once one left greater than current right, partition now
+            if (hash[i][0] > right) {
+                res.push_back(right-left+1);
+                left = hash[i][0];
+            }
+            right = max(right, hash[i][1]); // max of previous and current 
+        }
+        res.push_back(right-left+1); // farthest
+        return res;
+    }
+};
+
 void show(vector<int>& v) {
     cout << "[ ";
     for (int i = 0; i < v.size(); i++) {
