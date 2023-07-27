@@ -1,6 +1,8 @@
 /*
  * leetcode 876
  *
+ * slow-fast two-pointer
+ *
  */
 
 #include <iostream>
@@ -11,6 +13,7 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
 };
 
+// slow-fast two-pointer
 class Solution {
 public:
     ListNode* middleNode(ListNode* head) {

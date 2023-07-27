@@ -1,6 +1,8 @@
 /*
  * leetcode 2141
  * max running time of N computers
+ *
+ * binary search
  * 
  */
 

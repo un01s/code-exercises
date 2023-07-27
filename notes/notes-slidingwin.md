@@ -14,6 +14,8 @@ Check out the following problems and solutions.
 
 * [leetcode 209 min subarray len](https://github.com/un01s/code-exercises/blob/main/exercises/ex64-209-slidingw.cpp)
 
+* [leetcode 876 slow-fast two-pointer](https://github.com/un01s/code-exercises/blob/main/exercises/ex19-876.cpp)
+
 ## examples
 
 the general idea of sliding window is simple. 
