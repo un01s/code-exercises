@@ -14,6 +14,7 @@
  * 2) traverse from the start, if the letter matches its last position, then
  * the partition point is right after.
  *
+ * it also has the trace of double-pointer, left and right.
  * 
  */
 
