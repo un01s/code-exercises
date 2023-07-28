@@ -1,8 +1,12 @@
 /*
  * leetcode 738
  * monotone increasing digits
- * 
- * 
+ * adjacent x <= y
+ * return the max monotone number less than or equal to n
+ *  
+ * find where strNum[i-1] > strNum[i]
+ * the idea is simple: strNum[i-1]--; and strNum[i] = '9'
+ *
  * 2023-07-27
  *
  */
