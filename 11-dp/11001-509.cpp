@@ -2,6 +2,14 @@
  * leetcode 509
  * fib
  *
+ * DP 5-step
+ * 
+ * 1. dp[i]: the i-th fib number
+ * 2. dp[i] = dp[i-1] + dp[i-2]
+ * 3. initialization: dp[0] = 0; dp[1] = 1;
+ * 4. the order of traversal, from start to end
+ * 5. example to run fib
+ *
  */
 
 #include <iostream>
