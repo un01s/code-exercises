@@ -43,4 +43,8 @@ to visualize how to initialize ```dp[i][j]```:
 | Obj1 |0 | 0 | 0 | 0 | 0 |
 | Obj2 |0 | 0 | 0 | 0 | 0 |
 
+How to traverse? Need two loops. One for objects and the other for knapsacks.
+
+The order of traverse for 0-1 knapsack (2D dp[i][j]) does not matter. Either object-first or knapsack-first is OK.
+
 
