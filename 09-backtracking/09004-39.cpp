@@ -10,6 +10,13 @@
  *
  * 2023-07-20
  *
+ * this problem requires returning all the combinations whose sum equals to
+ * the target.
+ * so the backtracking is needed to traverse all the space and return the 
+ * answers.
+ *
+ * if this problem just requires the number of all combination, then
+ * dp is the way to go because it's 0/1-knapsack problem.
  *
  */
 
