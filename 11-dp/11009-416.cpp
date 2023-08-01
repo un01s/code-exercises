@@ -50,7 +50,7 @@ int main() {
         cout << "test1 failed" << endl;
     }
 
-    if (s.canPartition(v1) == false) {
+    if (s.canPartition(v2) == false) {
         cout << "test2 OK" << endl;
     } else {
         cout << "test2 failed" << endl;
