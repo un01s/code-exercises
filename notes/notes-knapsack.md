@@ -81,6 +81,8 @@ Each object has limited number, not one piece and not infinite.
 
 The knapsack could hold the max weight of 10. The question is that what is the maximum value the knapsack could hold?
 
+Check the code of [ex84](https://github.com/un01s/code-exercises/blob/main/exercises/ex84-knapsack.cpp).
+
 this problem could be transformed into 0-1 knapsack as follows:
 
 |   | weight | value | quantity |
