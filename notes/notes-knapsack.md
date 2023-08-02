@@ -65,3 +65,7 @@ for (int i = 0; i < weight.size(); i++) {
 
 So the traversal order is that first-loop for objects, and the second loop for knapsacks in reverse to ensure that object i is used only once in the knapsack.
 
+## complete knapsack
+
+There are N objects and one knapsack that could hold max weight of W. The i-th object weighs of weight[i] and has the value of value[i]. There are infinite number of each object. That is the difference from 0-1 knapsack.
+
