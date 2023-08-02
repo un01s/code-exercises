@@ -69,3 +69,30 @@ So the traversal order is that first-loop for objects, and the second loop for k
 
 There are N objects and one knapsack that could hold max weight of W. The i-th object weighs of weight[i] and has the value of value[i]. There are infinite number of each object. That is the difference from 0-1 knapsack.
 
+## multiple knapsack
+
+Each object has limited number, not one piece and not infinite.
+
+|   | weight | value | quantity |
+| - | ------ | ----- | -------- |
+| Obj0 | 1 | 15 | 2 |
+| Obj1 | 3 | 20 | 3 |
+| Obj2 | 3 | 30 | 2 |
+
+The knapsack could hold the max weight of 10. The question is that what is the maximum value the knapsack could hold?
+
+this problem could be transformed into 0-1 knapsack as follows:
+
+|   | weight | value | quantity |
+| - | ------ | ----- | -------- |
+| Obj0 | 1 | 15 | 1 |
+| Obj0 | 1 | 15 | 1 |
+| Obj1 | 3 | 20 | 1 |
+| Obj1 | 3 | 20 | 1 |
+| Obj1 | 3 | 20 | 1 |
+| Obj2 | 3 | 30 | 1 |
+| Obj2 | 3 | 30 | 1 |
+
+In the case each object can be used only once. So the object is either in the knapsack or not. This is a 0-1 knapsack problem.
+
+
