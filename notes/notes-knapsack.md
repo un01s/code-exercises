@@ -83,6 +83,19 @@ The knapsack could hold the max weight of 10. The question is that what is the m
 
 Check the code of [ex84](https://github.com/un01s/code-exercises/blob/main/exercises/ex84-knapsack.cpp).
 
+Below is the dp[i][j] table. The row is for each object. The column is for weight.
+
+```
+0 15 15 15 15 15 15 15 15 15 15 
+0 15 15 20 35 35 35 35 35 35 35 
+0 15 15 20 35 45 45 50 65 65 65 
+0 15 30 30 35 50 60 60 65 80 80 
+0 15 30 30 35 50 60 60 70 80 80 
+0 15 30 30 35 50 60 60 70 80 80 
+0 15 30 30 35 50 60 60 70 80 90 
+90
+```
+
 this problem could be transformed into 0-1 knapsack as follows:
 
 |   | weight | value | quantity |
