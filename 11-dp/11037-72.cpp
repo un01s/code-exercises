@@ -34,6 +34,12 @@
  * 
  */
 
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
+
 class Solution {
 public:
     int minDistance(string word1, string word2) {
@@ -47,7 +53,8 @@ public:
                 if (word1[i-1] == word2[j-1]) {
                     dp[i][j] = dp[i-1][j-1];
                 } else {
-                    dp[i][j] = min({dp[i-1][j-1], dp[i][j-1], dp[i-1][j]})+1;
+                    //dp[i][j] = min({dp[i-1][j-1], dp[i][j-1], dp[i-1][j]})+1;
+                    dp[i][j] = min(dp[i-1][j-1], min(dp[i][j-1], dp[i-1][j]))+1;
                 }
             }
         }
@@ -55,3 +62,16 @@ public:
     }
 };
 
+int main() {
+    string w1 = "horse";
+    string w2 = "ros";
+
+    Solution s;
+    if (3 == s.minDistance(w1, w2)) {
+        cout << "test1 OK" << endl;
+    } else {
+        cout << "test1 failed" << endl;
+    }
+
+    return 0;
+}
