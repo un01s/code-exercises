@@ -10,6 +10,16 @@
  * Input: s = "rabbbit", t = "rabbit"
  * Output: 3
  *
+ * [    r a b b i t
+ *   [1 0 0 0 0 0 0 ]
+ * r [1 1 0 0 0 0 0 ]
+ * a [1 1 1 0 0 0 0 ]
+ * b [1 1 1 1 0 0 0 ]
+ * b [1 1 1 2 1 0 0 ]
+ * b [1 1 1 3 3 0 0 ]
+ * i [1 1 1 3 3 3 0 ]
+ * t [0 1 1 3 3 3 3 ]]
+ *
  * Input: s = "babgbag", t = "bag"
  * Output: 5
  *
@@ -29,11 +39,33 @@
  *  e 1 1 1 0
  *  g 1 1 1 1
  *  g 1 1 1 2
- * 
+ *
+ * [ - b a g
+ *- [1 0 0 0 ]
+ *b [1 1 0 0 ]
+ *a [1 1 1 0 ]
+ *b [1 2 1 0 ]
+ *g [1 2 1 1 ]
+ *b [1 3 1 1 ]
+ *a [1 3 4 1 ]
+ *g [0 3 4 5 ]]
+ *  
  */
 
 class Solution {
 public:
+    void print(vector<vector<uint64_t> >& v) {
+        cout << "[";
+        for (int i = 0; i < v.size(); i++) {
+            cout << "[";
+            for (int j = 0; j < v[i].size(); j++) {
+                cout << v[i][j] << " ";
+            }
+            cout << "]";
+        }
+        cout << "]" << endl;
+    }
+
     // DP
     int numDistinct(string s, string t) {
         vector<vector<uint64_t>> dp(s.size() + 1, vector<uint64_t>(t.size() + 1));
