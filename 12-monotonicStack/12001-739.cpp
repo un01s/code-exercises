@@ -12,7 +12,11 @@
  * 
  * Find the next hotter day.
  * find first element on the right side which is bigger
- * 
+ *
+ * what to put into the stack: the index?
+ * the temperature less than or equal to the top, then push current index
+ * so that the stack always has the increasing temperatures from top to bottom
+ *  
  */
 
 class Solution {
