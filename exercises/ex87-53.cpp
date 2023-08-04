@@ -47,19 +47,24 @@ public:
 };
 
 // dp
-// 
+// dp[i] = max sum of subarray ending at nums[i] with index i
+//  
 class Solution3 {
 public:
     int maxSubArray(vector<int>& nums) {
         if (nums.size() == 0) return 0;
         vector<int> dp(nums.size());
         dp[0] = nums[0];
+        cout << "dp[i]=sum: " << dp[0] << " ";
+
         int res = dp[0]; // initial, starting from 0
         // starting from 1
         for (int i = 1; i < nums.size(); i++) {
-            dp[i] = max(dp[i-1]+nums[i], nums[i]); 
+            dp[i] = max(dp[i-1]+nums[i], nums[i]);
+            cout << dp[i] << " "; 
             if (dp[i] > res) res = dp[i];
         }
+        cout << endl;
         return res;
     }
 };
