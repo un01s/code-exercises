@@ -33,6 +33,8 @@ The order of learning is to follow basic data structures and common algorithms b
 
 * [leetcode-master](https://github.com/youngyangyang04/leetcode-master)
 
+* [fucking algorithm](https://github.com/labuladong/fucking-algorithm)
+
 * [leetcode analysis](https://github.com/wisdompeak/LeetCode)
 
 * [leetcode algo](https://github.com/doocs/leetcode)
