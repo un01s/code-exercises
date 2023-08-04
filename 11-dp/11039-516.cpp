@@ -2,6 +2,8 @@
  * leetcode 516
  *
  * DP
+ * use two dimension to do comparison one forward, the other backward
+ *
  * 
  * dp[i][j] = max length of palindromic within substring in [i, j] of input
  * 
