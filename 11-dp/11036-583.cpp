@@ -34,6 +34,14 @@
  *
  * so the answer is 2 at the right-bottom corner
  *
+ * #############################################
+ * 
+ * solution 2: DP
+ * this problem is almost same as Leetcode 1143: max common subarray
+ *
+ * get the max common subarray from two strings, all other chars have to be
+ * deleted. so the answer is (word1.size() + word2.size() - 2*max)
+ *
  */
 
 #include <iostream>
@@ -63,11 +71,26 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int minDistance(string word1, string word2) {
+        vector<vector<int> > dp(word1.size()+1, vector<int>(word2.size()+1, 0));
+        for (int i = 1; i <= word1.size(); i++){
+            for (int j = 1; j <= word2.size(); j++){
+                if (word1[i-1] == word2[j-1]) dp[i][j] = dp[i-1][j-1] + 1;
+                else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+        return word1.size()+word2.size()-dp[word1.size()][word2.size()]*2;
+    }
+};
+
 int main() {
     string w1 = "sea";
     string w2 = "eat";
 
-    Solution s;
+    //Solution s;
+    Solution2 s;
     if (2 == s.minDistance(w1, w2)) {
         cout << "test1 OK" << endl;
     } else {
