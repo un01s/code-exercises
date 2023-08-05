@@ -11,6 +11,8 @@ The operations on one data structure are simply the following:
 
 How to perform these operations efficiently is the core to choose different data structures and its algorithms.
 
+To solve a problem, the key is to exhaust all possible paths or answers, no duplicates, no redundant.
+
 ## [leetcode 124 binary tree max path sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
 ```C++
