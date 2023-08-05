@@ -20,6 +20,7 @@
 
 #include <iostream>
 #include <vector>
+#include <stack>
 
 using namespace std;
 
@@ -41,6 +42,7 @@ public:
         return sum;
     }
 };
+// brute force
 class Solution {
 public:
     int trap(vector<int>& height) {
@@ -66,18 +68,68 @@ public:
         return sum;
     }
 };
-
+// double-pointer
 class Solution2 {
 public:
     int trap(vector<int>& height) {
-        return 0;
+        int n = height.size();
+        // special case, only two columns
+        // the first and the last won't be able to trap rain
+        if (n <= 2) return 0;
+
+        vector<int> maxL(n, 0);
+        vector<int> maxR(n, 0);
+        maxL[0] = height[0];
+        for (int i = 1; i < n; i++) {
+            maxL[i] = max(height[i], maxL[i-1]);
+        }
+        maxR[n-1] = height[n-1];
+        for (int i = n-2; i >= 0; i--) {
+            maxR[i] = max(height[i], maxR[i+1]);
+        }
+        
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            int h = min(maxL[i], maxR[i]) - height[i];
+            if (h > 0) sum += h;
+        }
+        return sum;
     }
 };
-
+// monotonic stack
 class Solution3 {
 public:
     int trap(vector<int>& height) {
-        return 0;
+        int n = height.size();
+        // special case, only two columns
+        // the first and the last won't be able to trap rain
+        if (n <= 2) return 0;
+
+        // use the stack to store the index
+        // when to compute, use the height of that index
+        stack<int> st;
+        st.push(0); // first
+        int sum = 0;
+        for (int i = 1; i < height.size(); i++) {
+            if (height[i] < height[st.top()]) {     // less than the top
+                st.push(i);
+            } if (height[i] == height[st.top()]) {  // equal to the top
+                st.pop();
+                st.push(i); // need update the index
+            } else {                                // greater then the top
+                while (!st.empty() && height[i] > height[st.top()]) { // while
+                    int mid = st.top();
+                    st.pop();
+                    if (!st.empty()) {
+                        int h = min(height[st.top()], height[i]) - height[mid];
+                        int w = i - st.top() - 1; // minus 1
+                        sum += h * w;
+                    }
+                }
+                st.push(i);
+            }
+        }
+        return sum;
     }
 };
 
@@ -87,7 +139,7 @@ int main() {
     vector<int> v1(a, a+sizeof(a)/sizeof(int));
     vector<int> v2(b, b+sizeof(b)/sizeof(int));
 
-    Solution s;
+    Solution3 s;
 
     if (6 == s.trap(v1)) {
         cout << "test1 OK" << endl;
