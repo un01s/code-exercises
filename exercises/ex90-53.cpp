@@ -6,6 +6,7 @@
  * 
  */
 
+// DP
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
@@ -23,3 +24,19 @@ public:
     }
 };
 
+// greedy
+class Solution2 {
+public:
+    int maxSubArray(vector<int>& nums) {
+        int res = INT32_MIN;
+        int sum = 0; // sub sum
+        for (int i = 0; i < nums.size(); i++) {
+            sum += nums[i];
+            if (sum > res) { // keep the max, moving it ending pos
+                res = sum;
+            }
+            if (sum <= 0) sum = 0; // reset the starting pos
+        }
+        return res;
+    }
+};
