@@ -63,4 +63,38 @@ public:
     }
 };
 
+// monotonic stack
+class Solution {
+public:
+    int largestRectangleArea(vector<int>& heights) {
+        int result = 0;
+        stack<int> st;
+        heights.insert(heights.begin(), 0); // head 
+        heights.push_back(0); // tail
+        st.push(0);
 
+        // start from 1 instead of 0
+        for (int i = 1; i < heights.size(); i++) {
+            if (heights[i] > heights[st.top()]) { // case1
+                st.push(i);
+            } else if (heights[i] == heights[st.top()]) { // case2
+                st.pop(); //
+                st.push(i);
+            } else { // case3
+                while (!st.empty() && heights[i] < heights[st.top()]) {
+                    int mid = st.top();
+                    st.pop();
+                    if (!st.empty()) {
+                        int left = st.top();
+                        int right = i;
+                        int w = right - left - 1;
+                        int h = heights[mid];
+                        result = max(result, w * h);
+                    }
+                }
+                st.push(i);
+            }
+        }
+        return result;
+    }
+};
