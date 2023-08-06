@@ -21,7 +21,7 @@ To understand data structures is to connect every pieces together, pros and cons
 
   * pre-order (recursive, iterative): **mid**, left, right [0, 1, 3, 4, 2, 5, 6]
   * mid-order (recursive, iterative): left, **mid**, right [3, 1, 4, 0, 5, 2, 6]
-  * post-order (recursive, iterative): left, right, **mid** 
+  * post-order (recursive, iterative): left, right, **mid** [3, 4, 1, 5, 6, 2, 0] 
 
 * Breadth-first search (BFS): start from a given node, visit all its adjacent nodes, then move to the next level of nodes, until all nodes are visited.
 
