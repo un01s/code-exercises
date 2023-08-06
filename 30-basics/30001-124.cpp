@@ -36,6 +36,15 @@ struct TreeNode {
 class Solution {
 public:
     int res = INT_MIN;
+    // this is actually a post-order traversal of a binary tree:
+    //
+    // go to left sub-tree, then 
+    // go to right sub-tree
+    // go to the root node at last
+    // 
+    // the only thing tricky is that the traversal and the computation is
+    // bit different. 
+    //  
     int dfs(TreeNode* cur) {
         if (cur == nullptr) return 0; // empty
         // recursively
