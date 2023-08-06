@@ -15,6 +15,18 @@ To solve a problem, the key is to exhaust all possible paths or answers, no dupl
 
 To understand data structures is to connect every pieces together, pros and cons in different circumstances. 
 
+## how to traverse a binary tree?
+
+* Depth-first search (DFS): start from a given node, follow one path as deep as possible, then backtracks and try another path, until all nodes are visited.
+
+  * pre-order (recursive, iterative): mid, left, right
+  * mid-order (recursive, iterative): left, mid, right
+  * post-order (recursive, iterative): left, right, mid
+
+* Breadth-first search (BFS): start from a given node, visit all its adjacent nodes, then move to the next level of nodes, until all nodes are visited.
+
+  * level traversal (iterative)
+
 ## [leetcode 124 binary tree max path sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
 ```C++
