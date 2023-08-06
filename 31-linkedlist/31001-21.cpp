@@ -43,6 +43,6 @@ public:
         if (p1 != nullptr) p->next = p1;
         if (p2 != nullptr) p->next = p2;
 
-        return dummpy->next;
+        return dummy->next;
     }
 };
