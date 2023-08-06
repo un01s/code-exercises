@@ -6,12 +6,14 @@ The operations on one data structure are simply the following:
 
 * add/insert
 * delete
-* check/traverse: for/while array (linear) 
+* check/traverse: for/while array (linear), recursive binary tree (nonlinear) 
 * replace
 
 How to perform these operations efficiently is the core to choose different data structures and its algorithms.
 
 To solve a problem, the key is to exhaust all possible paths or answers, no duplicates, no redundants, then choose the correct one.
+
+To understand data structures is to connect every pieces together, pros and cons in different circumstances. 
 
 ## [leetcode 124 binary tree max path sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
