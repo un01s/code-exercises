@@ -6,6 +6,7 @@
  * traversal of a binary tree and inorder is the inorder traversal of the same 
  * tree, construct and return the binary tree.
  *  
+ * the traverse() function is basically a preorder traversal.
  * 
  */
 
