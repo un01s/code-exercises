@@ -19,13 +19,19 @@ To understand data structures is to connect every pieces together, pros and cons
 
 * Depth-first search (DFS): start from a given node, follow one path as deep as possible, then backtracks and try another path, until all nodes are visited.
 
-  * pre-order (recursive, iterative): **mid**, left, right
-  * mid-order (recursive, iterative): left, **mid**, right
-  * post-order (recursive, iterative): left, right, **mid**
+  * pre-order (recursive, iterative): **mid**, left, right [0, 1, 3, 4, 2, 5, 6]
+  * mid-order (recursive, iterative): left, **mid**, right [3, 1, 4, 0, 5, 2, 6]
+  * post-order (recursive, iterative): left, right, **mid** 
 
 * Breadth-first search (BFS): start from a given node, visit all its adjacent nodes, then move to the next level of nodes, until all nodes are visited.
 
-  * level traversal (iterative)
+  * level traversal (iterative) [0, 1, 2, 3, 4, 5, 6]
+
+For example, check the following tree.
+
+![binary tree](https://github.com/un01s/code-exercises/blob/main/media/binary-tree.png)
+
+
 
 ## [leetcode 124 binary tree max path sum](https://leetcode.com/problems/binary-tree-maximum-path-sum/)
 
