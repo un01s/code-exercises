@@ -37,6 +37,10 @@ The order of learning is to follow basic data structures and common algorithms b
 
 * [leetcode records](https://github.com/kk140906/leetcode_records)
 
+* [competitive programming](https://github.com/cp-algorithms/cp-algorithms)
+
+## notes
+
 * [leetcode analysis](https://github.com/wisdompeak/LeetCode)
 
 * [leetcode algo](https://github.com/doocs/leetcode)
