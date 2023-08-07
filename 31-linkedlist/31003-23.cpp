@@ -20,20 +20,21 @@ struct ListNode {
 //
 class Solution {
 public:
-    ListNode* mergeKLists(ListNode[] lists) {
+    //TODO review
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
         if (lists.size() == 0) return nullptr;
 
         ListNode* dummy = new ListNode(-1);
         ListNode* p = dummy;
 
-        auto comp = [](ListNode* a, ListNode* b) {
+        auto comp = [](const ListNode* a, const ListNode* b){
             return a->val > b->val;
         };
-        PriorityQueue<ListNode*, vector<ListNode*>, declty(comp)> pq(comp);
+        priority_queue<ListNode*, vector<ListNode*>, decltype(comp)> pq(comp);
 
-        for (ListNode node : lists) {
+        for (ListNode* node : lists) {
             if (node != nullptr) {
-                pq.add(node);
+                pq.push(node);
             }
         }
         while (!pq.empty()) {
@@ -45,6 +46,6 @@ public:
                 pq.push(tmp->next);
             }
         }
-        return dummy->next;
+        return dummy->next;    
     }
 };
