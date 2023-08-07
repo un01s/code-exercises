@@ -6,10 +6,11 @@
  * s[0] != 'i'
  * s contains only lowercase English letter
  *
- * stack is not a good idea. deque perhaps
+ * stack is not a good idea. deque better perhaps.
+ * but the reverse is the easiest.
+ *
  */
 
-// use the stack, but it is difficult to deal with two adjacent 'i'
 class Solution {
 public:
     string finalString(string s) {
@@ -25,31 +26,30 @@ public:
     }
 };
 
-// double-pointer
-// left and right
-// find the position of all "i" in the string
-// check if these "i" adjacent
 // 
 class Solution2 {
 public:
-    string finalString(string s) {
-        int left = 0; 
-        int right = s.size()-1;
-        string res = "";
-        while(left <= right) {
-        
+    string reverseStr(string s) {
+        int n = s.size();
+        if (n == 0) return "";
+        for (int l = 0; l <= n/2; l++) {
+            char t = s[n-l-1];
+            s[n-l-1] = s[l];
+            s[l] = t;
         }
+        return s;
+    }
+    string finalString(string s) {
+        string res = "";
         for(int i = 0; i < s.size(); i++) {
-            if (s[i] != 'i') {
-                st.push(s[i]);
+            if (s[i] == 'i') {
+                reverseStr(res);
             } else {
-                while (!st.empty()) {
-                    res += st.top();
-                    st.pop();
-                }
+                res += s[i];
             }
         }
-        
         return res;
     }
 };
+
+
