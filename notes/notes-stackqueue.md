@@ -24,6 +24,38 @@ Queue in SGI STL uses deque as the low-level container.
  
 Stack can be implemented using vector. Queue can be implemented with list.
 
+## queue vs priority queue
+
+| queue | priority queue |
+| ----- | -------------- |
+| FIFO  | highest priority out first |
+| the internal order of insertion maintained | the insertion order changed by priority |
+
+## priority queue
+
+By default, STL priority_queue gives the largest element the highest priority.
+
+| member function | notes |
+| --------------- | ----- |
+| empty() | if the priority queue is empty or not |
+| size() | the total number of elements in the priority queue |
+| top() | get the element with the highest priority in the queue |
+| push() | insert an element (a copy) in the priority queue |
+| pop() | remove the top element in the queue |
+| swap() | swap the elements of one priority queue with another |
+| emplace() | add a new element (new instance) to the queue at the top |
+
+## use-cases of a priority queue
+
+* prim's algorithm
+* Dijkstra's shortest path algorithm
+* heap sort
+* data compression
+* A* search algorithm
+
+The priority queue in C++ is by default implemented using the internal max-heap structure. However, a min-heap can also be created to implement the priority queue.
+
+
 ## [232 use stack to implement queue](https://leetcode.com/problems/implement-queue-using-stacks/)
 
 ## Leetcode 239 and 347
