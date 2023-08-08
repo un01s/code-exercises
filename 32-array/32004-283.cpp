@@ -23,10 +23,23 @@ public:
     }
     void moveZeroes(vector<int>& nums) {
         int p = removeElement(nums, 0);
+        printV(nums);
+
         // change the remaining to zeroes at the end
         for(; p < nums.size(); p++) {
             nums[p] = 0;
         }
+    }
+    // helper
+    void printV(vector<int>& v) {
+        if (v.empty()) return;
+
+        cout << "vector: ";
+        for(int i = 0; i < v.size(); i++) {
+            cout << v[i] << " ";
+        }
+        cout << endl;
+        return;
     }
 };
 
