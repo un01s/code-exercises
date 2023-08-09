@@ -62,3 +62,64 @@ void traverse(ListNode* head) {
 }
 ```
 
+## DP, DFS, and Backtracking as binary tree extension
+
+* Dynamic Programming is divid and conquer. Its focus is on one subtree.
+
+### count the number of nodes in a binary tree
+
+```C++
+int count(TreeNode* root) {
+    if (root == nullptr) return 0;
+
+    int leftCount = count(root->left);
+    int rightCount = count(root->right);
+
+    return leftCount+rightCount+1;
+}
+```
+
+```C++
+int fib(int n) {
+    if (n==1 || n==2) return 1;
+    return fib(n-1)+fib(n-2);
+}
+```
+
+* Backtracking is traversing. Its focus is on the branch between two nodes.
+
+```C++
+void traverse(TreeNode* root) {
+    if (root == nullptr) return;
+
+    // from root to root->left
+    traverse(root->left);
+    // back
+    // from root to root->right
+    traverse(root->right);
+    // back
+}
+
+void backtrack(...) {
+    for(int i = 0; i < ...; i++) {
+        // select
+        ...
+        // next level
+        backtrack(...);
+        // undo the previous selection
+        ...
+    }
+}
+```
+
+* DFS is also traversing. Its focus is on a single node.
+
+```C++
+void traverse(TreeNode* root) {
+    if (root == nullptr) return;
+
+    root->val++;
+    traverse(root->left);
+    traverse(root->right);
+}
+```
