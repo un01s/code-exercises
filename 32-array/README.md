@@ -5,7 +5,7 @@
 
 ```
 .
-├── 32001-26.cpp    <= slow and fast pinters
+├── 32001-26.cpp    <= slow and fast pointers
 ├── 32002-86.cpp
 ├── 32003-27.cpp
 ├── 32004-283.cpp
@@ -13,6 +13,9 @@
 ├── 32006-567.cpp   
 ├── 32007-438.cpp
 ├── 32008-3.cpp
+├── 32009-167.cpp   <= left-right pointers
+├── 32010-344.cpp
+├── 32011-125.cpp
 └── README.md
 ```
 
