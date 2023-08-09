@@ -77,7 +77,9 @@ public:
         // max depth of a tree =
         // max(leftMax, rightMax) + 1 (root itself)
         int res = max(leftMax, rightMax) + 1;
-
+        // this is a typical postorder traversal
+        // because first we have to get max depth of its subtrees
+        // then back to the root to crunch the number
         return res;   
     }
 };
