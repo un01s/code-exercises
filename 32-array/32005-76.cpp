@@ -23,9 +23,11 @@ using namespace std;
 class Solution {
 public:
     // helper
-    // helper
     void printS(string s) {
-        if (s.empty()) return;
+        if (s.empty()) {
+            cout << "string: empty" << endl;
+            return;
+        }
 
         cout << "string: ";
         for(int i = 0; i < s.size(); i++) {
@@ -79,12 +81,26 @@ public:
 int main() {
     string s1 = "ADOBECODEBANC";
     string t1 = "ABC";
+    string s2 = "a";
+    string t2 = "a";
+    string s3 = "a";
+    string t3 = "aa";
     
     Solution s;
     string a1 = s.minWindow(s1, t1);
     s.printS(s1);
     s.printS(t1);
-    s.printS(a1);
+    s.printS(a1); // "BANC"
+
+    string a2 = s.minWindow(s2, t2);
+    s.printS(s2);
+    s.printS(t2);
+    s.printS(a2); // "a"
+
+    string a3 = s.minWindow(s3, t3);
+    s.printS(s3);
+    s.printS(t3);
+    s.printS(a3); // ""
 
     return 0;
 }
