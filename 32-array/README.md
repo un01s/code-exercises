@@ -9,3 +9,13 @@
 
 it is the same approach of double-pointer as in [leetcode 26](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
+## sliding window approach
+
+* 76
+
+* 567
+
+* 438
+
+* 3
+
