@@ -20,13 +20,9 @@
 
 class Solution {
 public:
-    vector<bool> onPath;
-    vector<bool> visited;
-    bool hasCycle = false;
-
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         if (numCourses < 2) return true;
-
+        // build a graph
         return !hasCycle;                
     }
     // DFS
