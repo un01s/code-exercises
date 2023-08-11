@@ -18,11 +18,7 @@
  *  / \ / \
  * 4  5 6  7
  * 
- * imagine 2 and 3 is one node
- * then imagine 4 and 5, 5 and 6, and 6 and 7 is three nodes below.
  * 
- * this is a 3-nary tree not a binary tree.
- *
  * ===============================
  * JUST use the second solution!!!
  * ===============================
