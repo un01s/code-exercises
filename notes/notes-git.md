@@ -9,7 +9,9 @@
 * commit history (head)
 
 ```
-working-dir --add--> index --commit--> history
+working-dir --add--> index/stage --commit--> history
+stage --checkout--> working-dir
+history --checkout--> working-dir
 ```
 
 Every commit has a unqiue hash. Either HEAD or master branch is just a pointer to one of the commit in the history.
