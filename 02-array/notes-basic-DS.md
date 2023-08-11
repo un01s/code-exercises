@@ -2,7 +2,7 @@
 
 * array
 * linked list
-* hash table
+* list
 * stack
 * queue
 * hash table
@@ -38,6 +38,8 @@ int find(vector<int>& nums, int target) {
 
 ## operations on a linked list
 
+### signly linked list
+
 ```C++
 struct ListNode {
     int val;
@@ -45,6 +47,34 @@ struct ListNode {
     ListNode(int x): val(x), next(nullptr) {}
 };
 
+// insert q after p
+void insert(ListNode* p, ListNode* q) {
+    ListNode* t = p->next;
+    q->next = t;
+    p->next = q;
+}
+
+// remove the first node after n
+int find(ListNode* head, int target) {
+    int index = 0;
+    while(head != nullptr) {
+        if (head->val == target) return index;
+        head = head->next;
+        index++;
+    }
+    return -1;    
+}
+```
+
+### doubly linked list
+
+```C++
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode* prev;
+    ListNode(int x): val(x), next(nullptr), prev(nullptr) {}
+};
 
 ```
 
