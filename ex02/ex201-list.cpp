@@ -19,6 +19,7 @@ void printL(list<int>& l) {
 
 int main() {
     list<int> l;
+
     l.push_back(7);
     l.push_back(5);
     l.push_back(16);
@@ -26,6 +27,9 @@ int main() {
 
     l.push_front(25);
     l.push_back(2);
+
+    //l.insert(l.begin()+3, 33);
+    //l.erase(l.begin()+5);
 
     printL(l);
 
