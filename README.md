@@ -4,30 +4,21 @@ Go over basic data structures and algorithms. At the same time pick up the missi
 
 The order of learning is to follow basic data structures and common algorithms based on them, and to implement the solutions of LeetCode questions in C++ and other languages.
 
-## 01-hello
-
-## 02-array
-
-## 03-linked list
-
-## 04-hash table
-
-## 05-string
-
-## 06-double-pointer
-
-## 07-stack and queue
-
-## 08-binary tree
-
-## 09-back tracking
-
-## 10-greedy algorithm
-
-## 11-dynamic programming 
-
-## 12-graph
-
+| chapter | content |
+| ------- | ------- |
+| 01-hello | [hello](https://github.com/un01s/code-exercises/tree/main/01-hello) |
+| 02-array | [array](https://github.com/un01s/code-exercises/tree/main/02-array) |
+| 03-linked list | [linked-list](https://github.com/un01s/code-exercises/tree/main/03-linkedlist) |
+| 04-hash table | [hash table](https://github.com/un01s/code-exercises/tree/main/04-hashtable) |
+| 05-string | [string](https://github.com/un01s/code-exercises/tree/main/05-string) |
+| 06-double-pointer | [double-pointer](https://github.com/un01s/code-exercises/tree/main/06-doubleptr) |
+| 07-stack and queue | [stack and queue](https://github.com/un01s/code-exercises/tree/main/07-stackqueue) |
+| 08-binary tree | [binary tree](https://github.com/un01s/code-exercises/tree/main/08-binarytree) |
+| 09-back tracking | [back tracking](https://github.com/un01s/code-exercises/tree/main/09-backtracking) |
+| 10-greedy algorithm | [greedy](https://github.com/un01s/code-exercises/tree/main/10-greedy) |
+| 11-dynamic programming | [DP](https://github.com/un01s/code-exercises/tree/main/11-dp) | 
+| 12-monotonic stack | [monotonic stack](https://github.com/un01s/code-exercises/tree/main/12-monotonicStack) |
+| 13-graph | [graph](https://github.com/un01s/code-exercises/tree/main/13-graph) |
 
 ## references
 
