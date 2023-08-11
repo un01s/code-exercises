@@ -55,3 +55,28 @@ public:
         traverse(root);    
     }
 };
+
+class Solution3 {
+public:
+    void flatten(TreeNode* root) {
+        if(root == nullptr) return;
+        // flatten right subtree
+        flatten(root->right);
+
+        // keep the right subtree
+        TreeNode* right = root->right;
+        // if left subtree exists
+        if(root->left != nullptr) {
+            // flatten left subtree
+            flatten(root->left);
+
+            TreeNode* left = root->left;
+            root->left = nullptr;
+            root->right = left;
+            while(left->right != nullptr) {
+                left = left->right;
+            }
+            left->right = right;
+        }
+    }
+};
