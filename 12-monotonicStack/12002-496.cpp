@@ -1,6 +1,7 @@
 /*
  * leetcode 496
- *
+ * 
+ * there is another solution in this folder.
  */
 
 class Solution {
