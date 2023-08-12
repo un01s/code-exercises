@@ -32,6 +32,7 @@ public:
 ```
 class Solution {
 public:
+    // recursive
     // binary search for a sorted array
     int bSearch(vector<int>& nums, int target, int start, int end) {
         int mid = (start + end) / 2;
