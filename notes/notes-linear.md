@@ -77,7 +77,7 @@ struct ListNode {
 };
 
 class Solution {
-publici:
+public:
     // the definition of reverseList function:
     // input: one head node
     // output: the head node after reversal
