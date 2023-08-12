@@ -95,6 +95,8 @@ public:
 
 ### reverse a part of a linked list
 
+* [leetcode 92 reverse linked list II](https://leetcode.com/problems/reverse-linked-list-ii/)
+
 ```C++
 class Solution {
 public:
@@ -106,6 +108,16 @@ public:
         // trigger the base case
         head->next = reverseBetween(head->next, m-1, n-1);
         return head;
+    }
+    // leetcode  
+    ListNode* reverseBetween(ListNode* head, int left, int right) {
+        // base case or termination condition
+        if (left == 1) {
+            return reverseN(head, right);
+        }
+        // trigger the base case
+        head->next = reverseBetween(head->next, left-1, right-1);
+        return head;    
     }
 };
 ```
