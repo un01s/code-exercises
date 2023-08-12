@@ -21,6 +21,9 @@ public:
         }
         return k;
     }
+    // double-pointer: 
+    // k is the left pointer, i the right pointer
+    // both pointers move in the same direction
 };
 ```
 
