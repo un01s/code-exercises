@@ -29,7 +29,7 @@ public:
 
 ### [leetcode 35 search insert position](https://leetcode.com/problems/search-insert-position/)
 
-```
+```C++
 class Solution {
 public:
     // recursive
@@ -63,3 +63,55 @@ public:
 };
 ```
 
+## linked list
+
+### [leetcode 206 reverse linked list](https://leetcode.com/problems/reverse-linked-list/)
+
+```C++
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
+class Solution {
+publici:
+    // the definition of reverseList function:
+    // input: one head node
+    // output: the head node after reversal
+    ListNode* reverse(ListNode* head) {
+        ListNode* reverseList(ListNode* head) {
+        // termination condition: when the recursive should stop
+        if (head == nullptr || head->next == nullptr) return head;
+
+        ListNode* last = reverseList(head->next);
+
+        // according to the function definition
+        // now the last is the new head
+        // and the head->next is the new tail
+        head->next->next = head;
+        head->next = nullptr;
+
+        return last;    
+    }
+};
+
+class Solution2 {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* tmp;
+        ListNode* current = head;
+        ListNode* previous = nullptr;
+
+        while(current) {
+            tmp = current->next; // keep
+            current->next = previous; // reverse the direction of pointer
+            previous = current;
+            current = tmp;
+        }
+        return previous;    
+    }
+};
+```
