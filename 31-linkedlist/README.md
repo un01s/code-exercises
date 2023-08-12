@@ -22,11 +22,11 @@
 
 To understand the recursive algorithm, there are a few things to note:
 
-* what is the definition of the recursive function?
+* what is the definition of the recursive function? input and output?
 
 * what is the termination condition to stop the recursion?
 
-### Leetcode 206 reverse the linked list
+### [Step 01: Leetcode 206 - reverse the linked list](https://leetcode.com/problems/reverse-linked-list/)
 
 ```C++
 struct ListNode {
@@ -63,7 +63,7 @@ public:
 };
 ```
 
-### reverse the first N nodes
+### Step02: reverse the first N nodes
 
 ```
 reverseN(head, 3):
@@ -93,7 +93,7 @@ public:
 };
 ```
 
-### [leetcode 92 reverse linked list II](https://leetcode.com/problems/reverse-linked-list-ii/)
+### [Step03: leetcode 92 - reverse linked list II](https://leetcode.com/problems/reverse-linked-list-ii/)
 
 ```C++
 class Solution {
