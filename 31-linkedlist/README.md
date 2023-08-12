@@ -18,7 +18,7 @@
 
 * [876. middle of the linked list](https://leetcode.com/problems/middle-of-the-linked-list/)
 
-## recursive
+## recursive and divide-conquer
 
 To understand the recursive algorithm, there are a few things to note:
 
@@ -93,9 +93,7 @@ public:
 };
 ```
 
-### reverse a part of a linked list
-
-* [leetcode 92 reverse linked list II](https://leetcode.com/problems/reverse-linked-list-ii/)
+### [leetcode 92 reverse linked list II](https://leetcode.com/problems/reverse-linked-list-ii/)
 
 ```C++
 class Solution {
@@ -118,6 +116,63 @@ public:
         // trigger the base case
         head->next = reverseBetween(head->next, left-1, right-1);
         return head;    
+    }
+};
+```
+
+So from Leetcode-206 to Leetcode-92, it is all the recursive with a bit more complexity. However, it is still all the basics: what the recursive function will do and when the recursion will stop.
+
+As to the problem of Leetcode 206, there is another way of recursion, from the start to the end. That is we start reverse the linked list from the very start.
+
+### reverse linked list
+
+This recursive solution is reverse the linked list from the head to the tail.
+Instead the above, it is reverse the linked list from the tail to the head.
+
+```C++
+// time: O(n)
+// space: O(n)
+class Solution {
+public:
+    ListNode* reverse(ListNode* pre,ListNode* cur){
+        if(cur == nullptr) return pre;
+
+        ListNode* temp = cur->next;
+        cur->next = pre;
+
+        // compare it to the double-pointer approach
+        // pre = cur;
+        // cur = temp;
+        return reverse(cur,temp);
+    }
+    ListNode* reverseList(ListNode* head) {
+        // the initialization is exactly same as double-pointer
+        // ListNode* cur = head;
+        // ListNode* pre = nullptr;
+        return reverse(nullptr, head);
+    }
+};
+```
+
+Here is the double-pointer approach to reverse the linked list.
+
+```C++
+// time: O(n)
+// space: O(1)
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* temp; // to store the cur->next
+        ListNode* cur = head;
+        ListNode* pre = nullptr;
+        while(cur) {
+            temp = cur->next;  // store cur->next because cur->next will be modified next
+            cur->next = pre; // reverse
+            // update both pre and cur
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
     }
 };
 ```
