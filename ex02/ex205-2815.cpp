@@ -19,6 +19,10 @@
  *
  */
 
+#include <iostream>
+#include <vector>
+
+using namespace std;
 
 class Solution {
 public:
@@ -53,3 +57,24 @@ public:
     }
 };
 
+int main() {
+    int a[] = {51,71,17,24,42};
+    vector<int> v1(a, a+sizeof(a)/sizeof(int));
+    int b[] = {1, 2, 3, 4};
+    vector<int> v2(b, b+sizeof(b)/sizeof(int));
+
+    Solution s;
+    if (88 == s.maxSum(v1)) {
+        cout << "Test1 OK" << endl;
+    } else {
+        cout << "Test1 failed" << endl;
+    }
+
+    if (-1 == s.maxSum(v2)) {
+        cout << "Test2 OK" << endl;
+    } else {
+        cout << "Test2 failed" << endl;
+    }
+
+    return 0;    
+}
