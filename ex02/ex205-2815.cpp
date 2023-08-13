@@ -7,8 +7,8 @@
  * 
  * Return the maximum sum or -1 if no such pair exists.
  *
- * 1) max sum
- * 2) same digits
+ * 1) max sum of a pair of num
+ * 2) same max digit in both numbers
  *
  * examples:
  * input: nums = [51, 71, 17, 24, 42]
