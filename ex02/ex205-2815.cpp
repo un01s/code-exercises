@@ -63,7 +63,7 @@ int main() {
     int b[] = {1, 2, 3, 4};
     vector<int> v2(b, b+sizeof(b)/sizeof(int));
     int c[] = {4, 3, 31, 14, 23, 5};
-    vector<int> v3(c, b+sizeof(c)/sizeof(int));
+    vector<int> v3(c, c+sizeof(c)/sizeof(int));
 
     Solution s;
     if (88 == s.maxSum(v1)) {
