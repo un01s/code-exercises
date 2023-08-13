@@ -1,10 +1,12 @@
 /*
  * leetcode 2816
  * double a number represented as a linked list
+ *
+ * https://www.youtube.com/@techcourses4u
+ * Tech Courses
  * 
  */
 
-// recursion
 struct ListNode {
     int val;
     ListNode *next;
@@ -13,6 +15,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// recursive
 // from the tail to start
 class Solution {
 public:
@@ -20,7 +23,7 @@ public:
         // base condition
         if (cur == nullptr) return 0; // no carry
         
-        int value = 2 * cur->val + multiply(cur->mext);
+        int value = 2 * cur->val + multiply(cur->next);
         cur->val = value%10;
 
         return value/10; // carry        
@@ -31,6 +34,30 @@ public:
             head = new ListNode(carry, head);
         }
         return head;        
+    }
+};
+
+// iterative
+class Solution {
+public:
+    ListNode* doubleIt(ListNode* head) {
+        // reverse list
+        head == reverseList(head);
+        // iterate list
+        int carry = 0;
+        ListNode* ptr = head;
+        while(ptr) {
+            // multiply by 2 and add carry
+            int value = ptr->val * 2 + carry;
+            ptr->val = value%10;
+            carry = value/10;
+            if ((ptr->next == nullptr) && carry) {
+                ptr->next = new ListNode(carry);
+                ptr = ptr->next;
+            }
+            ptr = ptr->next;
+        }
+        return reverseList(head);
     }
 };
 
