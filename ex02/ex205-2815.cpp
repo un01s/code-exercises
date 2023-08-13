@@ -62,6 +62,8 @@ int main() {
     vector<int> v1(a, a+sizeof(a)/sizeof(int));
     int b[] = {1, 2, 3, 4};
     vector<int> v2(b, b+sizeof(b)/sizeof(int));
+    int c[] = {4, 3, 31, 14, 23, 5};
+    vector<int> v3(c, b+sizeof(c)/sizeof(int));
 
     Solution s;
     if (88 == s.maxSum(v1)) {
@@ -74,6 +76,12 @@ int main() {
         cout << "Test2 OK" << endl;
     } else {
         cout << "Test2 failed" << endl;
+    }
+
+    if (54 == s.maxSum(v3)) {
+        cout << "Test3 OK" << endl;
+    } else {
+        cout << "Test3 failed" << endl;
     }
 
     return 0;    
