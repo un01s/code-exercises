@@ -3,6 +3,8 @@
  * max sliding window
  *
  * deque
+ * this is a new solution used deque directly.
+ *
  *
  * there is another leetcode 236
  * lowest common ancestor of a binary tree 
