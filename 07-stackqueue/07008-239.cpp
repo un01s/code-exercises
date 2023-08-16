@@ -73,6 +73,14 @@ public:
     }
 };
 
+void printV(vector<int>& v) {
+    cout << "Vector:[";
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+    cout << "]" << endl;
+}
+
 int main() {
     int a[] = {1, 3, -1, -3, 5, 3, 6, 7};
     int k1 = 3;
@@ -81,6 +89,7 @@ int main() {
     Solution s;
    
     vector<int> a1 = s.maxSlidingWindow(v1, k1);
-    
+    printV(a1);
+
     return 0;
 }
