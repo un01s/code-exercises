@@ -30,6 +30,8 @@ The order of learning is to follow basic data structures and common algorithms b
 
 * [leetcode solution](https://github.com/doocs/leetcode)
 
+* [leetcode neetcode](https://github.com/neetcode-gh/leetcode)
+
 * [leetcode solutions](https://github.com/purvasingh96/My-Leetcode-Solutions)
 
 * [leetcode records](https://github.com/kk140906/leetcode_records)
