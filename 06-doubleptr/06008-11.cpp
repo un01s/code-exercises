@@ -4,7 +4,10 @@
  *
  */
 
+#include <iostream>
+#include <vector>
 
+using namespace std;
 
 class Solution {
 public:
@@ -40,4 +43,25 @@ public:
     }
 };
 
+int main() {
+    int a[] = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+    vector<int> v1(a, a+sizeof(a)/sizeof(int));
+    int b[] = {1, 1};
+    vector<int> v2(b, b+sizeof(b)/sizeof(int));
 
+    Solution s;
+
+    if (49 == s.maxArea(v1)) {
+        cout << "test1 OK" << endl;
+    } else {
+        cout << "test1 failed" << endl;
+    }
+
+    if (1 == s.maxArea(v2)) {
+        cout << "test2 OK" << endl;
+    } else {
+        cout << "test2 failed" << endl;
+    }
+
+    return 0;
+}
