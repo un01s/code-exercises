@@ -1,8 +1,11 @@
 /*
- * leetcode 236
+ * leetcode 239
  * max sliding window
  *
  * deque
+ *
+ * there is another leetcode 236
+ * lowest common ancestor of a binary tree 
  *
  */
 
@@ -71,5 +74,13 @@ public:
 };
 
 int main() {
+    int a[] = {1, 3, -1, -3, 5, 3, 6, 7};
+    int k1 = 3;
+    vector<int> v1(a, a+ sizeof(a)/sizeof(int));
+
+    Solution s;
+   
+    vector<int> a1 = s.maxSlidingWindow(v1, k1);
+    
     return 0;
 }
