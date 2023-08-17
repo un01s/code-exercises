@@ -54,11 +54,15 @@ public:
 class Solution3 {
 public:
     ListNode* reverseList(ListNode* head) {
-        // corner cases
+        // corner cases are also 
+        // the stop conditions for recursion
         if (head == nullptr) return nullptr;
         if (head->next == nullptr) return head;
         //
         ListNode* last = reverseList(head->next);
+        // now head->next is the last node
+        // have to add head to the head->next
+        //
         head->next->next = head;
         head->next = nullptr;
         return last;
