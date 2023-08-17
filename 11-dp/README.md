@@ -32,4 +32,31 @@ Given an array or a string, where each element can be considered as a day, the s
 
 * the final result is dp[last][j] by some kind of aggregation such as (sum, min, max, ...)
 
+The typical problem is house robber and best to buy or sell stocks.
+
+#### Leetcode 198
+
+| round | state1 | state2 |
+| ----- | ------ | ------ |
+| (i-1)-th  | rob  | no rob |
+| i-th | no rob | nor rob or rob |
+
+The constraint is not to rob both neighbors.
+
+```C++
+// 0: the max gain by robbing at the i-th round
+// 1: the max gain by not robbing at the i-th round
+
+for(int i = 1; i <= n; i++) {
+    dp[i][0] = dp[i-1][1] + val[i];
+    dp[i][1] = max(dp[i-1][0], dp[i-1][1]);
+}
+// ...
+int answer = max(dp[n][0], dp[n][1]);
+```
+
+
+
+
+
 
