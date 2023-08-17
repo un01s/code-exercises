@@ -6,4 +6,30 @@ To think about DP, there are three questions to ask:
 * the definition of dp array? 
 * how does states change?
 
+## DP vs. Brute force
+
+The key difference is that DP does not care about the specific routes but the number of routes or paths. Given a mxn matrix, how many ways to go from the top-left corner to the bottom-right corner?
+
+* define f(i, j) as the total number of paths from (1, 1) to (i, j)
+
+* f(i, j) = f(i-1, j) + f(i, j-1);
+
+* once f(i, j) is known, no need to know how to get to calculate it
+
+* the past does not depend on the future, the future does not affect on the past.
+
+* optimal sub-structrure: the optimal solution to a big problem can be derived fom many small problems.
+
+This means the DP can be applied to the problem where a big one can be divided into several small problems, the optinal solution to each small problem could lead to the optimal solution of the big problem.
+
+### I. time serie
+
+Given an array or a string, where each element can be considered as a day, the state of today can be derived only by the state of yesterday. 
+
+* dp[i][j]: the i-th round, the j-th state (j = 1, 2, ..., K)
+
+* find out how to reach dp[i][j] from dp[i-1][j] (j = 1, 2, ..., K)
+
+* the final result is dp[last][j] by some kind of aggregation such as (sum, min, max, ...)
+
 
