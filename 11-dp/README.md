@@ -55,6 +55,24 @@ for(int i = 1; i <= n; i++) {
 int answer = max(dp[n][0], dp[n][1]);
 ```
 
+#### Leetcode 213 (head and tail connected)
+
+* No robbing at the first, for the others, house[1]~house[last] as LC198.
+
+* No robbing at the last, for the others, house[0]~house[last-1] as LC198.
+
+#### Leetcode 123 best time to buy and sell stock III
+
+#### Leetcode 309 best time ot buy and sell stock with cooldown
+
+#### Leetcode 376 longest wiggle subsequence
+
+#### Leetcode 276 paint fence (neighboring house should not has the same color)
+
+#### Leetcode 487 max consecutive ones II
+
+#### leetcode 1186 maximum subarray sum with one deletion
+
 
 
 
