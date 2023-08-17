@@ -63,6 +63,51 @@ public:
 };
 ```
 
+The key point of recursion is not jump into the recursion. Instead, use the definition of the recursive function and use the logic to deduce the solution.
+
+Here is another way of recursion
+
+```C++
+class Solution {
+public:
+    ListNode* reverse(ListNode* pre, ListNode* cur) {
+        // stop condition
+        if (cur == nullptr) return pre;
+        // reverse pre and cur
+        ListNode* tmp = cur->next;
+        cur->next = pre;
+        return reverse(cur, tmp);
+    }
+    ListNode* reverseList(ListNode* head) {
+        // just like the double-pointer
+        // ListNode* cur = head;
+        // ListNode* pre = nullptr;
+        return reverse(nullptr, head);
+    }
+}; 
+```
+
+Below is the double-pointer approach. It just reverse one node after another.
+
+```C++
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+        ListNode* temp; // to store the cur->next
+        ListNode* cur = head;
+        ListNode* pre = NULL;
+        while(cur) {
+            temp = cur->next;  // store cur->next
+            cur->next = pre; // reverse
+            // update both pre and cur
+            pre = cur;
+            cur = temp;
+        }
+        return pre;
+    }
+};
+```
+
 ### Step02: reverse the first N nodes
 
 ```
