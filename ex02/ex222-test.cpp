@@ -32,6 +32,22 @@ vector<int>Eratosthenes(int n)
     return primes;
 }
 
+    vector<int> pScore(int n)
+    {
+        vector<int>q(n+1,0);
+        for (int i=2; i<=n; i++){
+            if (q[i] >= 1) continue;
+            q[i] = 1;
+            int j=i*2;
+            while (j<=n)
+            {
+                q[j] +=1;
+                j+=i;
+            }
+        }
+        return q;
+    }
+
 void printV(vector<int>& v) {
     cout << "V:[ ";
     for (int i = 0; i < v.size(); i++) {
@@ -51,6 +67,15 @@ int main() {
     // get all the primes less than or equal to n
     vector<int> p = Eratosthenes(m);
     printV(p);
+
+    // get all the pScore
+    cout << "N:[ ";
+    for(int i = 2; i <= m; i++) {
+        cout << i << " ";
+    }
+    cout << "]" << endl;
+    vector<int> ps = pScore(m);
+    printV(ps);
 
     return 0;
 }

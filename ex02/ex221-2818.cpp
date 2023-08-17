@@ -63,6 +63,17 @@
  *
  */
 
+#include <iostream>
+#include <vector>
+#include <stack>
+#include <cmath>
+
+using namespace std;
+
+using LL = long long;
+LL M = 1e9+7;
+using PII = pair<LL, LL>;
+
 class Solution {
 public:
     int primeScore(int n) {
@@ -80,18 +91,134 @@ public:
         }
         return score;
     }
+
+    vector<int> primeScore2(int n)
+    {
+        vector<int> q(n+1,0);
+        for (int i=2; i<=n; i++){
+            if (q[i] >= 1) continue;
+            q[i] = 1;
+            int j=i*2;
+            while (j<=n)
+            {
+                q[j] +=1;
+                j+=i;
+            }
+        }
+        return q;
+    }
+
+    // find all primes <= n
+    vector<int>Eratosthenes(int n)
+    {
+        vector<int>q(n+1,0);
+        vector<int>primes;
+        for (int i=2; i<=sqrt(n); i++){
+            if (q[i]==1) continue;
+            int j=i*2;
+            while (j<=n)
+            {
+                q[j]=1;
+                j+=i;
+            }
+        }        
+        for (int i=2; i<=n; i++)
+        {
+            if (q[i]==0)
+                primes.push_back(i);                
+        }
+        return primes;
+    }
+
+    long long quickMul(long long x, long long N) {
+        if (N == 0) {
+            return 1;
+        }
+        LL y = quickMul(x, N / 2) % M;
+        return N % 2 == 0 ? (y * y % M) : (y * y % M * x % M);
+    }
+
     int maximumScore(vector<int>& nums, int k) {
-        int n = nums.size();
+        LL n = nums.size();
         int m = *max_element(nums.begin(), nums.end());
 
         vector<int> pScore(n);
         for (int i = 0; i < n; i++) {
             pScore[i] = primeScore(nums[i]);
         }
+        //printV(pScore);
 
-        vector<int> next_greater(n, n);
-        vector<int> prev_greater(n, -1);
+        vector<int> s = primeScore2(m);
+        vector<LL> scores(n);
+        for (int i = 0; i < n; i++) {
+            scores[i] = s[nums[i]];
+        }
+        //printV(scores);
+        // prime scores are OK 
+        // both are the same
 
+        // monotonic stack
+        vector<LL> next_greater(n, n);
+        vector<LL> prev_greater(n, -1);
+        stack<int> st; // decreasing
+        // traverse from the start to the end
+        for (int i = 0; i < n; i++) {
+            while(!st.empty() && scores[st.top()] < scores[i])
+                st.pop();
+            if (!st.empty()) {
+                prev_greater[i] = st.top();
+            }
+            st.push(i);
+        }
+        while(!st.empty()) st.pop();
+        // traverse from the end to the start
+        for (int i = n-1; i >= 0; i--) {
+            while(!st.empty() && scores[st.top()] <= scores[i])
+                st.pop();
+            if (!st.empty())
+                next_greater[i] = st.top();
+            st.push(i);
+        }
+        
+        vector<PII> tmp(n);
+        for(int i = 0; i < n; i++) {
+            LL t = (LL)(i-prev_greater[i])*(next_greater[i]-i);
+            tmp[i] = {nums[i], t};
+        }
+
+        sort(tmp.rbegin(), tmp.rend());
+
+        LL res = 1;
+        for(auto [num, t]: tmp) {
+            if((LL)k >= t) {
+                res = res * quickMul(num, t)%M;
+                k -= t;
+            } else {
+                res = res * quickMul(num, k)%M;
+                k = 0;
+            }
+            if (k == 0) break;
+        }
+
+        return res;
+    }
+
+    // helper
+    void printV(vector<int>& v) {
+        cout << "V:[ ";
+        for (int i = 0; i < v.size(); i++) {
+            cout << v[i] << " ";
+        }
+        cout << "]" << endl;
     }
 };
 
+int main() {
+    int a[] = {3, 4, 9, 7, 29, 17, 11, 33};
+    vector<int> v1(a, a+sizeof(a)/sizeof(int));
+    
+    Solution s;
+    s.maximumScore(v1, 2);
+    
+    return 0;
+}
