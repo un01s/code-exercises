@@ -1,5 +1,8 @@
 # dynamic programming
 
+https://www.youtube.com/watch?v=FLbqgyJ-70I
+at 48'
+
 To think about DP, there are three questions to ask:
 
 * what is the state? 
@@ -72,6 +75,12 @@ int answer = max(dp[n][0], dp[n][1]);
 #### Leetcode 487 max consecutive ones II
 
 #### leetcode 1186 maximum subarray sum with one deletion
+
+### II time series 
+
+Given an array, each element is one day. the state of today depends on one day before today. Need to choose it from the array.
+
+#### LC300. longest increasing subsequence
 
 
 
