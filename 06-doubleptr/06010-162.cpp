@@ -20,6 +20,11 @@ public:
         int n = nums.size();
         int left = 0;
         int right = n-1;
+        // the range: [left, right]
+        // always moves to the greater side
+        // neighbor elements won't be equal
+        // so just two cases, either greater or less
+        // this likes two pointers moving towards each other
         while(left < right) {
             int mid = left+(right-left)/2;
             if (nums[mid] > nums[mid+1]) {
