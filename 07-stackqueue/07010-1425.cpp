@@ -4,6 +4,14 @@
  *
  * use deque to maintain a monotonic queue
  * 
+ * dp[i] = the max sum of a subsequence ending with nums[i]
+ * 
+ * imagine that we get a dp[i], that is greater than all dp before it.
+ * then there is no need to keep all the dp values before dp[i]
+ * i is the latest index, dp[i] is the latest max
+ * so there is a monotonic queue, decreasing
+ * the top has the max value
+ * the tail has the min value
  * 
  */
 
