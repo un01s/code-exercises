@@ -57,9 +57,9 @@ class Solution:
                     obstacles.add((i, j))
                 else:
                     water.add((i, j))
-        //
-        // first BFS: empty can be flooded
-        //
+        #
+        # first BFS: empty can be flooded
+        #
         empties.add(start)
         q = collections.deque([(i, j, 0) for i, j in water])
         visited = collections.defaultdict()
@@ -70,11 +70,11 @@ class Solution:
                 for r, c in {(i-1, j), (i+1, j), (i, j-1), (i, j+1)}:
                     if (r, c) in empties and (r, c) not in visited:
                         q.append((r, c, t+1))
-        //
-        // 2nd BFS
+        #
+        # 2nd BFS
         if start in water:
             return -1;
-        //
+        #
         q = collections.deque([(*start, 0)])
         seen = set()
         while q:
