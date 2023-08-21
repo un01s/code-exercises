@@ -45,6 +45,38 @@ public:
     }
 };
 
+// this is in the backtracing section
+class Solution2 {
+private:
+
+    vector<vector<int> > result;
+    vector<int> path;
+    void backtracking(vector<int>& candidates, int target, int sum, int startIndex) {
+        if (sum > target) {
+            return;
+        }
+        if (sum == target) {
+            result.push_back(path);
+            return;
+        }
+
+        for (int i = startIndex; i < candidates.size(); i++) {
+            sum += candidates[i];
+            path.push_back(candidates[i]);
+            backtracking(candidates, target, sum, i); // no i+1 because element can be used with no limit
+            sum -= candidates[i];
+            path.pop_back();
+        }
+    }
+public:
+    vector<vector<int> > combinationSum(vector<int>& candidates, int target) {
+        result.clear();
+        path.clear();
+        backtracking(candidates, target, 0, 0);
+        return result;
+    }
+};
+
 void printV2(vector<vector<int> >& v) {
     cout << "vector:[";
     for (int i = 0; i < v.size(); i++) {
