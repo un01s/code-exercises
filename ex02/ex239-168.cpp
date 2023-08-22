@@ -24,6 +24,13 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    string convertToTitle(int columnNumber) {
+        return "";
+    }
+};
+
 int main() {
     int n1 = 1; // A
     int n2 = 28; // AB
