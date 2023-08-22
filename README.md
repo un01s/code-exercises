@@ -24,9 +24,11 @@ The order of learning is to follow basic data structures and common algorithms b
 
 Array, stack, heap/queue, priority queue, deque and so on are linear structures with special and limited access to their elements. The linked list is logically linear and physically non-linear. Then binary trees and graphs become even more nonlinear. Both array and linked list are basics.
  
-Then hashing, two-pointer, sliding window, binary search, DFS, and BFS, backtracking, DP, greedy are just general ideas to deal with specific problems.
+Then hashing, two-pointer, sliding window, binary search are clever with specific conditions to apply. DFS, BFS, backtracking, DP, greedy are just general ideas to deal with specific problems, somwhere they are very close to brute force that is the strength of computers. 
 
-Other topics like tries, knapsack, intervals, graphs, bit-manipulation, math and geomotry are interesting too.
+The idea of recursion in algorithms is very powerful. Together with iteration, both are different traversal approaches. For recursion, go from head to tail or reversely. This is also a string point of computer.
+
+Other topics like tries, knapsack, intervals, bit-manipulation, math and geomotry are more specific.
 
 ## references
 
