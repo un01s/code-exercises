@@ -1,6 +1,6 @@
 # Data Structure and Algorithm in C++
 
-Go over basic data structures and algorithms. At the same time pick up the missing parts of C++, and other languages. Possible move to GPU, and embedded display?
+Go over basic data structures and algorithms. At the same time pick up the missing parts of C++, and other languages. GPU? Networking? ML?
 
 The order of learning is to follow basic data structures and common algorithms based on them, and to implement the solutions of LeetCode questions in C++ and other languages.
 
@@ -19,6 +19,14 @@ The order of learning is to follow basic data structures and common algorithms b
 | 11-dynamic programming | [DP](https://github.com/un01s/code-exercises/tree/main/11-dp) | 
 | 12-monotonic stack | [monotonic stack](https://github.com/un01s/code-exercises/tree/main/12-monotonicStack) |
 | 13-graph | [graph](https://github.com/un01s/code-exercises/tree/main/13-graph) |
+
+## notes on data structures and algorithms
+
+Array, stack, heap/queue, priority queue, deque and so on are linear structures with special and limited access to their elements. The linked list is logically linear and physically non-linear. Then binary trees and graphs become even more nonlinear. Both array and linked list are basics.
+ 
+Then hashing, two-pointer, sliding window, binary search, DFS, and BFS, backtracking, DP, greedy are just general ideas to deal with specific problems.
+
+Other topics like tries, knapsack, intervals, graphs, bit-manipulation, math and geomotry are interesting too.
 
 ## references
 
