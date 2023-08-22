@@ -27,7 +27,15 @@ public:
 class Solution2 {
 public:
     string convertToTitle(int columnNumber) {
-        return "";
+        int n = columnNumber;
+        string res = "";
+        while (n > 0) {
+            int r = (n-1)%26;
+            res += (char)(r+'A');
+            n = (n-1)/26;
+        }
+        reverse(res.begin(), res.end());
+        return res;
     }
 };
 
@@ -36,7 +44,7 @@ int main() {
     int n2 = 28; // AB
     int n3 = 701; // ZY
 
-    Solution s;
+    Solution2 s;
 
     if ("A" == s.convertToTitle(n1)) {
         cout << "Test1 OK" << endl;
