@@ -31,10 +31,11 @@ public:
         string res = "";
         while (n > 0) {
             int r = (n-1)%26;
-            res += (char)(r+'A');
+            //res += (char)(r+'A');
+            res = (char)(r+'A') + res;
             n = (n-1)/26;
         }
-        reverse(res.begin(), res.end());
+        //reverse(res.begin(), res.end());
         return res;
     }
 };
