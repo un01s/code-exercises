@@ -32,13 +32,13 @@ Other topics like tries, knapsack, intervals, bit-manipulation, math and geomotr
 
 ## references
 
-* [leetcode-master](https://github.com/youngyangyang04/leetcode-master)
+* [1 leetcode-master](https://github.com/youngyangyang04/leetcode-master)
 
-* [leetcode analysis](https://github.com/wisdompeak/LeetCode)
+* [2 leetcode analysis](https://github.com/wisdompeak/LeetCode)
 
-* [leetcode solution](https://github.com/doocs/leetcode)
+* [3 fucking algorithm](https://github.com/labuladong/fucking-algorithm)
 
-* [fucking algorithm](https://github.com/labuladong/fucking-algorithm)
+* [4 leetcode solution](https://github.com/doocs/leetcode)
 
 * [awesome leetcode algo](https://github.com/hicodebear/awesome-leetcode-algorithm)
 
