@@ -2,21 +2,11 @@
 
 The fundamental structures are ```array``` and ```linked list```. The basic operations on any data structure are as follows: 
  
-* access to one element (Read)
-
-* modify one element (WRITE)
-
-* look for one specific element (SEARCH)
-
-* add one new element (ADD)
-
-* remove one existing element (MINUS)
-
-| OP | Array | Linked List |
+| Operation | Array | Linked List |
 | -- | ----- | ----------- |
-| Read | index | Traverse |
-| Write | index | Traverse |
-| SEARCH | index | Traverse |
-| ADD | resize | pointer |
-| MINUS | move | pointer |
+| READ: access to one element | index | Traverse |
+| WRITE: modify one element | index | Traverse |
+| SEARCH: look for one specific element | index | Traverse |
+| ADD: add one new element | resize | pointer |
+| MINUS: remove one existing element | move | pointer |
 
