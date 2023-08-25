@@ -15,6 +15,16 @@ The fundamental structures are ```array``` and ```linked list```. The basic oper
 After both ```array``` and ```linked list```, ```string```, ```stack``` and ```queue``` are natural variants of ```array```. Then ```binary tree``` expands ```linked list```. 
 
 ```C++
+struct ListNode {
+    int val;
+    ListNode *next;
+
+    // constructors
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
+
 struct TreeNode {
     int val;
     TreeNode *left;
