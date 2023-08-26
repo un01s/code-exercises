@@ -105,3 +105,8 @@ void traverse(TreeNode* root) {
 }
 ```
 
+### enumerate every case: no more, no less
+
+DP, Union Find, Greedy, Knapsack, and so on.
+
+
