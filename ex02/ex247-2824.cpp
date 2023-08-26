@@ -1,6 +1,8 @@
 /*
  * leetcode 2824
  *
+ * double-pointer
+ *
  * https://www.youtube.com/@codeyao9796
  * 
  */
