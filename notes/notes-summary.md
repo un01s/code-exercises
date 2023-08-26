@@ -44,3 +44,64 @@ void traverse(TreeNode* root) {
 }
 ```
 
+### iterative vs. recursive
+
+Programming languages provide many fundamental data types and ways to construct more complex types from them. This is the basis of data structures to solve problems. When traversing a linear data structure such as array, or a singly linked list, it is natural to iterate through it. Both ```for``` and ```while``` loops are there together with other flow control constructs.
+
+```C++
+/*
+ * iterate through an array
+ */
+void traverse(vector<int>& a) {
+    for (int i = 0; i < a.size(); i++) {
+        cout << a[i] << " ";
+    }
+    cout << endl;
+}
+
+struct ListNode {
+    int val;
+    ListNode* next;
+    // constructor
+    ListNode(int x) : val(x), next(nullptr) {}
+};
+
+/*
+ * iterate through a linked list
+ */
+void traverse(ListNode* head) {
+    ListNode* p = head;
+    for (; p != nullptr; p = p->next) {
+        cout << p->val;
+    }
+}
+
+/*
+ * recurse over a linked list
+ */
+void traverse(ListNode* head) {
+    if (head == nullptr) return;
+
+    cout << head->val << endl;
+    traverse(head->next);
+}
+
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+/*
+ * recurse through a binary tree
+ */
+void traverse(TreeNode* root) {
+    if (root == nullptr) return;
+    
+    cout << root->val << endl;
+    traverse(root->left);
+    traverse(root->right);
+}
+```
+
