@@ -1,3 +1,4 @@
+"""
 /*
  * leetcode 2825
  * using cyclic increment 'a' -> 'b', 'z'->'a'
@@ -10,6 +11,7 @@
  * that means chr take an integer and return its string eqivalent
  * 
  */
+"""
 
 class Solution:
     def canMakeSusequence(self, str1: str, str2: str) -> bool:
