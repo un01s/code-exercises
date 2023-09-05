@@ -50,6 +50,8 @@ Other topics like tries, knapsack, intervals, bit-manipulation, math and geomotr
 
 * [competitive programming](https://github.com/cp-algorithms/cp-algorithms)
 
+* [bilibili endlesscheng](https://space.bilibili.com/206214)
+
 ## notes
 
 * [leetcode algo](https://github.com/doocs/leetcode)
