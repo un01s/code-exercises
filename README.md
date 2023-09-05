@@ -52,6 +52,8 @@ Other topics like tries, knapsack, intervals, bit-manipulation, math and geomotr
 
 * [bilibili endlesscheng](https://space.bilibili.com/206214)
 
+* [leetbook cn](https://leetcode.cn/leetbook/)
+
 ## notes
 
 * [leetcode algo](https://github.com/doocs/leetcode)
