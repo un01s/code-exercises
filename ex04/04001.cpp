@@ -4,6 +4,14 @@
  * unordered_map<int, int> m;
  * as hash, the first is the number, the second is its index
  *
+ * unordered_map is an assoiciative container that contains key-value pairs 
+ * with unique keys.
+ * iterators: begin(), end()
+ * capacity: empty(), size(), max_size()
+ * modifiers: clear(), insert(), insert_range(), erase(), swap(). extract()
+ *            merge()
+ * lookup: at(), operator[], count(), find(), contains(), equal_range()
+ * 
  */
 
 #include <unordered_map>
