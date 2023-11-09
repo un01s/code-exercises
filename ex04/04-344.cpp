@@ -28,3 +28,16 @@ public:
     }
 };
 
+// recursion
+class Solution {
+public:
+    void myReverse(int i, vector<char>& s) {
+        if (i >= s.size()-i-1) return;
+        swap(s[i], s[s.size()-i-1]);
+        myReverse(i+1, s);
+    }
+    void reverseString(vector<char>& s) {
+        myReverse(0, s);
+    }
+};
+
