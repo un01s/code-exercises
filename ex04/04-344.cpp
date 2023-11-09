@@ -41,3 +41,17 @@ public:
     }
 };
 
+// recursion
+class Solution {
+public:
+    void myReverse(vector<char>& s, int low, int high) {
+        if (low >= high) return;
+        myReverse(s, low+1, high-1);
+        swap(s[low], s[high]);
+    }
+    void reverseString(vector<char>& s) {
+        int n = s.size()-1;
+        myReverse(s, 0, n);
+    }
+};
+
