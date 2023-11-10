@@ -3,6 +3,11 @@
  * 
  * double-pointer
  *
+ * sorting first
+ * for every i, move j to check if nums[i]+k == nums[j]
+ * make sure i skipping the duplicates
+ * for every i, make sure j = i+1
+ *
  */
 
 class Solution {
