@@ -16,6 +16,8 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+// double pointer
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -28,6 +30,20 @@ public:
             cur = tmp;
         }
         return pre;
+    }
+};
+
+// recursion
+class Solution {
+public:
+    ListNode* reverse(ListNode* cur, ListNode* pre) {
+        if (cur == nullptr) return pre;
+        ListNode* res = reverse(cur->next, cur);
+        cur->next = pre;
+        return pre;
+    }
+    ListNode* reverseList(ListNode* head) {
+        return reverse(head, nullptr); // cur, prev
     }
 };
 
