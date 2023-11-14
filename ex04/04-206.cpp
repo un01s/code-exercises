@@ -22,6 +22,8 @@ class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
         ListNode *cur = head, *pre = nullptr;
+        // for pre and cur
+        // both have to move forward
         while(cur != nullptr) {
             ListNode* tmp = cur->next; // store cur->next
             cur->next = pre;           // change cur->next
