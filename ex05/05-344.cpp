@@ -60,3 +60,25 @@ public:
     }
 };
 
+/*
+ * another recursive
+ */
+
+class Solution {
+public:
+    char temp = 0;
+    void reverse(vector<char>& s, int left, int right) {
+        // termination
+        if (left >= right) return;
+        // before recursion
+        temp = s[left];
+        s[left] = s[right];
+        s[right] = temp;
+        // recurse now
+        reverse(s, left+1, right-1);
+        // after recursion: nothing
+    }
+    void reverseString(vector<char>& s) {
+        reverse(s, 0, s.size()-1);
+    }
+};
