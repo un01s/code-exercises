@@ -23,3 +23,23 @@ public:
     }
 };
 
+// recursive
+//
+class Solution {
+public:
+    ListNode* reverse(ListNode* pre,ListNode* cur){
+        if(cur == NULL) return pre;
+        ListNode* temp = cur->next;
+        cur->next = pre;
+        // the recursive actually dose the following two steps
+        // pre = cur;
+        // cur = temp;
+        return reverse(cur,temp);
+    }
+    ListNode* reverseList(ListNode* head) {
+        // initialization
+        // ListNode* cur = head;
+        // ListNode* pre = NULL;
+        return reverse(NULL, head);
+    }
+};
