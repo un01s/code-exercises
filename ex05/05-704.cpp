@@ -2,6 +2,12 @@
  * binary search, array, ordered
  */
 
+// binary search
+// i = 0, j = n-1, so the range is [i, j], both ends inclusive
+// so while (i <= j) {...}, it has to be <= instead of <
+// because i, j both inclusive
+// 
+
 class Solution {
 public:
     int search(vector<int>& nums, int target) {
