@@ -45,3 +45,25 @@ public:
     }
 };
 
+// recursive
+// [left, right]
+class Solution {
+public:
+    int binary(vector<int>& nums, int target, int s, int e) {
+        int m = s + (e-s)/2;
+        if (s > e) {
+            return -1;
+        }
+        if (nums[m] == target) {
+            return m;
+        }
+        if (nums[m] < target) {
+            return binary(nums, target, m+1,e);
+        } else {
+            return binary(nums, target, s, m-1);
+        }
+    }
+    int search(vector<int>& nums, int target) {
+        return binary(nums, target, 0, nums.size()-1);
+    }
+};
