@@ -53,3 +53,23 @@ public:
     }
 };
 
+// sliding window
+class Solution {
+public:
+    int minSubArrayLen(int target, vector<int>& nums) {
+        // sliding window
+        int i = 0;
+        int sum = 0;
+        int len = 0;
+        int res = INT32_MAX;
+        for (int j = 0; j < nums.size(); j++) {
+            sum += nums[j];
+            while (sum >= target) {
+                len = j-i+1;
+                res = res < len? res: len;
+                sum -= nums[i++];
+            }
+        }
+        return res==INT32_MAX? 0 : res;
+    }
+};
