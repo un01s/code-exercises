@@ -33,3 +33,32 @@ public:
     }
 };
 
+// 
+class Solution {
+public:
+    vector<int> inorderTraversal(TreeNode* root) {
+        vector<int> res;
+        stack<TreeNode*> st;
+
+        if (root != nullptr) st.push(root);
+        while(!st.empty()) {
+            TreeNode* node = st.top();
+            if (node != nullptr) {
+                st.pop();
+                if (node->right) st.push(node->right);
+
+                st.push(node);
+                st.push(nullptr);
+
+                if (node->left) st.push(node->left);
+            } else {
+                st.pop();
+                node = st.top();
+                st.pop();
+                res.push_back(node->val);
+            }
+        }
+        return res;
+    }
+};
+
