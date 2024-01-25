@@ -12,7 +12,7 @@ class Solution:
         for c in s:
             if c in mapping.values():
                 stack.append(c)
-            elif c in mapping.keys
+            elif c in mapping.keys():
                 if not stack or stack.pop() != mapping[c]:
                     return false
         return len(stack)==0
