@@ -1,5 +1,5 @@
 /*
- * 001 two sum
+ * Leetcode 001 two sum
  * https://www.techinterviewhandbook.org/grind75
  *
  */
