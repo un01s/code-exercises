@@ -23,3 +23,48 @@ public:
     }
 };
 
+//
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        unordered_map<char,int> mp;
+        for(auto m:magazine){
+            mp[m]++;
+        }
+        for(auto r:ransomNote){
+            if(mp.find(r)!=mp.end()){
+                mp[r]--;
+                if(mp[r]==0){
+                    mp.erase(r);
+                }
+            }
+            else{
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+//
+class Solution {
+public:
+    bool canConstruct(string ransomNote, string magazine) {
+        int record[26] = {0};
+        if (ransomNote.size() > magazine.size()) {
+            return false; // each letter in magazine can be used only once
+        }
+        for(int i = 0; i < magazine.size(); i++) {
+            record[magazine[i]-'a']++;
+        }
+        // now compare it with the ransom notes
+        for(int j = 0; j < ransomNote.size(); j++) {
+            record[ransomNote[j]-'a']--;
+            if (record[ransomNote[j]-'a'] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
