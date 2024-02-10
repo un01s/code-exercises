@@ -46,6 +46,7 @@ public:
     }
 };
 
+// hash-table
 //
 class Solution {
 public:
@@ -55,10 +56,12 @@ public:
             return false; // each letter in magazine can be used only once
         }
         for(int i = 0; i < magazine.size(); i++) {
+            // count the frequency of each char in magazine
             record[magazine[i]-'a']++;
         }
         // now compare it with the ransom notes
         for(int j = 0; j < ransomNote.size(); j++) {
+            // traverse ransomNote
             record[ransomNote[j]-'a']--;
             if (record[ransomNote[j]-'a'] < 0) {
                 return false;
