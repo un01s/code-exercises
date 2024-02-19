@@ -27,3 +27,23 @@ public:
     }
 };
 
+class Solution {
+public:
+    ListNode* middleNode(ListNode* head) {
+        int s = 0;
+        ListNode* slow = head;
+        while(head->next) {
+            s++;
+            head = head->next;
+            if (s%2 == 0) {
+                slow = slow->next;
+            }
+        }
+        if (s%2 == 0) {
+            return slow;
+        } else {
+            return slow->next;
+        }
+    }
+};
+
