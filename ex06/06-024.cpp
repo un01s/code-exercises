@@ -24,7 +24,7 @@ public:
         unordered_map<int, int> mp;
         for (int num: nums) {
             if (mp.count(num) > 0) return true;
-            mp.insert(num);
+            mp[num]++;
         }
         return false;
     }
