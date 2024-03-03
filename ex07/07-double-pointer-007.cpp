@@ -8,7 +8,7 @@
 
 class Solution {
 public:
-    int minSubArrayLen(int s, vector<int>& nums) 
+    int minSubArrayLen(int target, vector<int>& nums) 
     {
         int i = 0;
         int j = 0;
@@ -18,10 +18,10 @@ public:
         for (int j = 0; j < nums.size(); j++) {
             sum += nums[j];
 
-            if (sum < s)
+            if (sum < target)
                 continue;
             else {
-                while (sum >= s) {
+                while (sum >= target) {
                     len = min(len, j - i + 1);
                     sum -= nums[i];
                     i++;
