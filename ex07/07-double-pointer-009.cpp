@@ -3,6 +3,7 @@
  * move zeroes
  *
  * double-pointer, in-palce
+ * when the right pointer comes across non-zero, move it to the left.
  *
  */
 
