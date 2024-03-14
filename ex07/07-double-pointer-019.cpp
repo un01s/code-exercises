@@ -2,6 +2,8 @@
  * leetcode 1687
  * delivering boxes from storage to ports
  *
+ * check the notes: https://github.com/wisdompeak/LeetCode/tree/master/Two_Pointers/1687.Delivering-Boxes-from-Storage-to-Ports
+ *
  */
 
 class Solution {
