@@ -6,7 +6,6 @@
  * either [left, right] or [left, right)
  * 
  * the solution below is using [left, right)
- *
  */
 
 class Solution {
